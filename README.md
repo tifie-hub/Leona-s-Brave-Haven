@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Leona’s Brave Haven
 
-## Getting Started
+Production-ready website for Leona’s Brave Haven, a dog rescue in Sarasota, Florida.
 
-First, run the development server:
+Motto: **Saving lives. Giving hope. Changing Tomorrow.**
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — local development
+- `npm run lint` — ESLint
+- `npm run build` — production build
+- `npm start` — serve the production build
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+Copy `.env.example` to `.env.local` and add credentials only when they are available.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable | Required now | Purpose |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Recommended | Canonical URL for metadata and later payment returns |
+| `RESEND_API_KEY` | No | Transactional email for form notifications |
+| `CONTACT_INBOX` | No | Inbox that should receive form emails |
+| `STRIPE_SECRET_KEY` | No | Payment checkout, after a verified account exists |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | No | Browser Stripe key, after a verified account exists |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Without email credentials, forms still validate and save a JSON record in `data/submissions/`. Without Stripe, the donation form records an intended gift and does not charge a card.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app is a standard Next.js project and can be deployed to Vercel or any Node host that supports Next.js 16.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push the repository.
+2. Set `NEXT_PUBLIC_SITE_URL` to the public domain.
+3. Add email and payment keys only after the organization supplies them.
+4. Replace demonstration photographs with authorized rescue media before launch.
+
+## Production blockers
+
+- Online payments are not connected.
+- Transactional email is not connected.
+- Dog listings and rescue stories are demonstration layouts only.
+- Nonprofit or tax-deductible status is not claimed because it has not been verified.
+- A map embed is intentionally omitted until the address pin is confirmed.
+- No social profiles are linked because none were verified.

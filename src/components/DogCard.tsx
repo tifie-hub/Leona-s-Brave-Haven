@@ -31,7 +31,7 @@ export function DogCard({ slug, photo }: DogCardProps) {
           when Leona’s Brave Haven supplies a verified record.
         </p>
         <p className="mt-4 text-xs leading-5 text-muted">
-          Photo: {photo.photographer} / Unsplash. Not a documented rescue case.
+          Licensed Unsplash photograph. Not a documented rescue case.
         </p>
         <Link
           href={`/meet-the-dogs/${slug}`}

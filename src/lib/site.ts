@@ -26,7 +26,17 @@ export const addressLines = [
   site.location.country,
 ] as const;
 
+export const headerLinks = [
+  { href: "/our-story", label: "Our Story" },
+  { href: "/meet-the-dogs", label: "Meet the Dogs" },
+  { href: "/rescue-stories", label: "Rescue Stories" },
+  { href: "/foster-and-volunteer", label: "Foster" },
+  { href: "/events", label: "Events" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
 export const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/our-story", label: "Our Story" },
   { href: "/meet-the-dogs", label: "Meet the Dogs" },
   { href: "/rescue-stories", label: "Rescue Stories" },

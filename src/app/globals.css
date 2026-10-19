@@ -17,18 +17,21 @@
   --color-charcoal: #303030;
   --color-muted: #666666;
   --color-orange: #f7931e;
-  --font-heading: var(--font-montserrat);
-  --font-sans: var(--font-inter);
+  --font-heading: "Montserrat", "Trebuchet MS", sans-serif;
+  --font-sans: "Inter", "Segoe UI", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 
 body {
   background: var(--white);
   color: var(--charcoal);
-  font-family: var(--font-inter), "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 h1,
@@ -36,7 +39,7 @@ h2,
 h3,
 h4,
 .font-heading {
-  font-family: var(--font-montserrat), "Trebuchet MS", sans-serif;
+  font-family: var(--font-heading);
 }
 
 :focus-visible {

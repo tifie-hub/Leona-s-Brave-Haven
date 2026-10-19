@@ -9,7 +9,7 @@ type FieldProps = {
   children: React.ReactNode;
 };
 
-export function Field({ id, name, label, hint, error, children }: FieldProps) {
+export function Field({ id, label, hint, error, children }: FieldProps) {
   const hintId = hint ? `${id}-hint` : undefined;
   const errorId = error ? `${id}-error` : undefined;
 
@@ -51,7 +51,7 @@ export function FormStatus({
   status,
   message,
 }: {
-  status: "idle" | "loading" | "success" | "error";
+  status: "idle" | "loading" | "success" | "error" | "not_configured";
   message?: string;
 }) {
   if (status === "idle" || !message) return null;
@@ -61,7 +61,9 @@ export function FormStatus({
       ? "border-mint bg-[#eefaf8] text-charcoal"
       : status === "error"
         ? "border-[#8a2b0d] bg-[#fff4ef] text-charcoal"
-        : "border-[#cfcacf] bg-[#f4f2f4] text-charcoal";
+        : status === "not_configured"
+          ? "border-orange bg-[#fff7ee] text-charcoal"
+          : "border-[#cfcacf] bg-[#f4f2f4] text-charcoal";
 
   return (
     <div className={`rounded-md border-2 px-4 py-3 text-sm leading-6 ${tone}`} role="status">
