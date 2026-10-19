@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { Button } from "@/components/Button";
-import type { LicensedPhoto } from "@/lib/demo-media";
+import { statusLabel, type Dog } from "@/lib/dogs";
 
 type DogCardProps = {
-  slug: string;
-  photo: LicensedPhoto;
+  dog: Dog;
 };
 
-export function DogCard({ slug, photo }: DogCardProps) {
+export function DogCard({ dog }: DogCardProps) {
+  const photo = dog.images[0];
+
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-[#e6e2e6] bg-white shadow-[0_8px_24px_rgba(48,48,48,0.06)]">
       <div className="relative aspect-[4/3] bg-[#f4f2f4]">
@@ -21,20 +22,14 @@ export function DogCard({ slug, photo }: DogCardProps) {
       </div>
       <div className="flex flex-1 flex-col p-5">
         <p className="text-xs font-heading font-semibold uppercase tracking-[0.14em] text-muted">
-          Demonstration listing
+          {statusLabel(dog.status)}
         </p>
         <h3 className="mt-2 font-heading text-xl font-bold text-charcoal">
-          Verified name pending
+          {dog.name}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-6 text-muted">
-          Age, breed, size, temperament, and adoption status will appear here
-          when Leona’s Brave Haven supplies a verified record.
-        </p>
-        <p className="mt-4 text-xs leading-5 text-muted">
-          Licensed Unsplash photograph. Not a documented rescue case.
-        </p>
-        <Button href={`/meet-the-dogs/${slug}`} variant="secondary" className="mt-5">
-          View demonstration profile
+        <p className="mt-3 flex-1 text-sm leading-6 text-muted">{dog.summary}</p>
+        <Button href={`/meet-the-dogs/${dog.slug}`} variant="secondary" className="mt-5">
+          Meet {dog.name}
         </Button>
       </div>
     </article>

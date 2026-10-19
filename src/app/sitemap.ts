@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { dogs } from "@/lib/dogs";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -16,9 +17,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/donation-policy",
   ];
 
-  return routes.map((route) => ({
+  const pages = routes.map((route) => ({
     url: `${site.url}${route}`,
-    changeFrequency: route === "" ? "weekly" : "monthly",
+    changeFrequency: route === "" || route === "/meet-the-dogs" ? "weekly" : "monthly",
     priority: route === "" || route === "/donate" ? 1 : 0.7,
+  })) satisfies MetadataRoute.Sitemap;
+
+  const profiles = dogs.map((dog) => ({
+    url: `${site.url}/meet-the-dogs/${dog.slug}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
   }));
+
+  return [...pages, ...profiles];
 }

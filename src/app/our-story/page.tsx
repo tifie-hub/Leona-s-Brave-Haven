@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
-import { photos } from "@/lib/demo-media";
+import { getDog } from "@/lib/dogs";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function OurStoryPage() {
+  const photo = getDog("suncica")!.images[0];
+
   return (
     <>
       <PageHero
@@ -40,20 +42,14 @@ export default function OurStoryPage() {
               support their next steps toward safety and loving homes.
             </p>
           </div>
-          <div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src={photos.runningPair.src}
-                alt={photos.runningPair.alt}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
-            </div>
-            <p className="mt-3 text-xs text-muted">
-              Licensed Unsplash photograph. Demonstration image only, not a
-              documented rescue case.
-            </p>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
           </div>
         </div>
       </section>

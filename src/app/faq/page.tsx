@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "How can I adopt a rescued dog in Florida?",
-    a: "Start with an adoption inquiry or email. Individual dogs will be listed on Meet the Dogs after verified records are supplied. Adoption requirements will be published only after the organization confirms them.",
+    a: "Browse Meet the Dogs, then start an adoption inquiry or email the rescue. Placement depends on a good match for the dog and household.",
   },
   {
     q: "Can I foster a rescue dog?",

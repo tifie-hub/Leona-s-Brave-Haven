@@ -1,21 +1,29 @@
 import Image from "next/image";
 import { Button } from "@/components/Button";
-import { DemoNotice } from "@/components/DemoNotice";
 import { DogCard } from "@/components/DogCard";
 import { Section } from "@/components/Section";
-import { demonstrationDisclaimer, photos } from "@/lib/demo-media";
+import { featuredDogs, featuredStories, getDog } from "@/lib/dogs";
 import { donationCategories, site } from "@/lib/site";
 
 export default function HomePage() {
+  const hero = {
+    src: "/images/header.webp",
+    alt: "A rescued dog being held safely in someone’s arms",
+  };
+  const mission = getDog("nino")!.images[0];
+  const dogs = featuredDogs();
+  const stories = featuredStories().slice(0, 2);
+
   return (
     <>
       <section className="relative isolate -mt-[var(--site-header-height)] min-h-[calc(78vh+var(--site-header-height))] overflow-hidden bg-charcoal">
         <Image
-          src={photos.hero.src}
-          alt={photos.hero.alt}
+          src={hero.src}
+          alt={hero.alt}
           fill
           priority
-          className="object-cover"
+          loading="eager"
+          className="object-cover object-[68%_center]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/70 to-charcoal/35" />
@@ -38,10 +46,6 @@ export default function HomePage() {
                 Meet the Dogs
               </Button>
             </div>
-            <p className="mt-6 text-xs leading-5 text-white/70">
-              Hero photograph is a licensed Unsplash image, not a documented
-              Leona’s Brave Haven rescue.
-            </p>
           </div>
         </div>
       </section>
@@ -57,8 +61,8 @@ export default function HomePage() {
             <p className="font-heading text-4xl font-bold text-charcoal">300+</p>
             <h3 className="mt-3 font-heading text-xl font-bold">Dogs saved</h3>
             <p className="mt-2 leading-7 text-muted">
-              Verified organizational impact shared by the rescue. Additional
-              statistics will be added only when they are confirmed.
+              More than 300 abandoned and injured dogs have been rescued and
+              given urgent care, rehabilitation, and a safe place to heal.
             </p>
           </article>
           <article className="rounded-xl bg-white p-6">
@@ -88,8 +92,8 @@ export default function HomePage() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <Image
-              src={photos.companions.src}
-              alt={photos.companions.alt}
+              src={mission.src}
+              alt={mission.alt}
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -113,9 +117,6 @@ export default function HomePage() {
                 Read our story
               </Button>
             </div>
-            <p className="mt-4 text-xs text-muted">
-              Licensed Unsplash photograph. Demonstration image only.
-            </p>
           </div>
         </div>
       </Section>
@@ -123,75 +124,56 @@ export default function HomePage() {
       <Section
         tone="soft"
         eyebrow="Meet the dogs"
-        title="Adoption listings will appear here"
-        intro="Verified dogs available through Leona’s Brave Haven have not been published yet. The cards below show the listing layout only."
+        title="Dogs looking for a home"
+        intro="Frida, Lola, Darko, and many others are waiting for a foster family or a forever home."
       >
-        <DemoNotice>
-          <p>{demonstrationDisclaimer}</p>
-        </DemoNotice>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {photos.demoDogs.slice(0, 3).map((photo, index) => (
-            <DogCard
-              key={photo.src}
-              slug={`demonstration-profile-0${index + 1}`}
-              photo={photo}
-            />
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {dogs.map((dog) => (
+            <DogCard key={dog.slug} dog={dog} />
           ))}
         </div>
         <div className="mt-10 text-center">
           <Button href="/meet-the-dogs" variant="secondary">
-            View all demonstration profiles
+            View all dogs
           </Button>
         </div>
       </Section>
 
       <Section
         eyebrow="Rescue stories"
-        title="Real stories, when they can be shared"
-        intro="Authorized rescue videos, recovery updates, and adoption outcomes will be published here. Until those records are supplied, this section stays honest."
+        title="Real recoveries. Real second chances."
+        intro="These stories come from the dogs in our care: street rescues, discarded puppies, and recoveries that still need a home."
       >
         <div className="grid gap-6 lg:grid-cols-2">
-          <article className="rounded-xl border border-[#e6e2e6] bg-white p-6">
-            <p className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-              Verified stories
-            </p>
-            <h3 className="mt-3 font-heading text-2xl font-bold">
-              No public rescue stories yet
-            </h3>
-            <p className="mt-3 leading-7 text-muted">
-              When the organization provides dates, photographs, and permission
-              to share a dog’s journey, those stories will replace this empty
-              state.
-            </p>
-          </article>
-          <article className="overflow-hidden rounded-xl border border-[#e6e2e6] bg-white">
-            <div className="relative aspect-[16/10]">
-              <Image
-                src={photos.resting.src}
-                alt={photos.resting.alt}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
-            </div>
-            <div className="p-6">
-              <p className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-orange">
-                Demonstration layout
-              </p>
-              <h3 className="mt-3 font-heading text-2xl font-bold">
-                Story title will appear here
-              </h3>
-              <p className="mt-3 leading-7 text-muted">
-                A verified rescue story can include the date, what is known and
-                authorized to share, recovery progress, and a current outcome.
-                This card is a layout sample only.
-              </p>
-            </div>
-          </article>
+          {stories.map((dog) => (
+            <article key={dog.slug} className="overflow-hidden rounded-xl border border-[#e6e2e6] bg-white">
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src={dog.images[0].src}
+                  alt={dog.images[0].alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </div>
+              <div className="p-6">
+                <p className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-orange">
+                  Rescue story
+                </p>
+                <h3 className="mt-3 font-heading text-2xl font-bold">{dog.name}</h3>
+                <p className="mt-3 leading-7 text-muted">{dog.summary}</p>
+                <div className="mt-5">
+                  <Button href={`/meet-the-dogs/${dog.slug}`} variant="secondary">
+                    Read {dog.name}'s story
+                  </Button>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
         <div className="mt-10 text-center">
           <Button href="/rescue-stories" variant="secondary">
-            Rescue stories
+            More rescue stories
           </Button>
         </div>
       </Section>

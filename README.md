@@ -41,13 +41,13 @@ The app is a standard Next.js project and can be deployed to Vercel or any Node 
 1. Push the repository.
 2. Set `NEXT_PUBLIC_SITE_URL` to the public domain.
 3. Add email and payment keys only after the organization supplies them.
-4. Replace demonstration photographs with authorized rescue media before launch.
+4. Add email and payment keys only after the organization supplies them.
 
-## Production blockers
+## Production notes
 
-- Online payments are not connected.
-- Transactional email is not connected.
-- Dog listings and rescue stories are demonstration layouts only.
+- Dog listings and rescue stories use organization-supplied photographs and edited stories.
+- Online payments are not connected until Stripe keys are added.
+- Transactional email is not connected until Resend keys are added.
 - Nonprofit or tax-deductible status is not claimed because it has not been verified.
 - A map embed is intentionally omitted until the address pin is confirmed.
 - No social profiles are linked because none were verified.
