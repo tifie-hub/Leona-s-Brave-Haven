@@ -9,7 +9,7 @@ import { donationCategories, site } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      <section className="relative isolate min-h-[78vh] overflow-hidden bg-charcoal">
+      <section className="relative isolate -mt-[var(--site-header-height)] min-h-[calc(78vh+var(--site-header-height))] overflow-hidden bg-charcoal">
         <Image
           src={photos.hero.src}
           alt={photos.hero.alt}
@@ -19,7 +19,7 @@ export default function HomePage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/70 to-charcoal/35" />
-        <div className="relative mx-auto flex min-h-[78vh] w-full max-w-6xl items-end px-4 py-16 sm:px-6 lg:items-center lg:px-8">
+        <div className="relative mx-auto flex min-h-[calc(78vh+var(--site-header-height))] w-full max-w-6xl items-end px-4 pb-16 pt-[calc(var(--site-header-height)+2.5rem)] sm:px-6 lg:items-center lg:px-8">
           <div className="max-w-2xl text-white">
             <p className="font-heading text-sm font-semibold uppercase tracking-[0.18em] text-lime">
               Dog rescue in Sarasota, Florida

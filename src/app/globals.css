@@ -8,6 +8,13 @@
   --charcoal: #303030;
   --medium-grey: #666666;
   --warm-orange: #f7931e;
+  --site-header-height: 5.25rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --site-header-height: 5.5rem;
+  }
 }
 
 @theme inline {
@@ -73,5 +80,29 @@ h4,
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+.btn-glass {
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 24px rgba(48, 48, 48, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.btn-glass:hover {
+  box-shadow: 0 10px 28px rgba(48, 48, 48, 0.12);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .header-glass {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+  }
+
+  .btn-glass,
+  .backdrop-blur-\[16px\] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 }

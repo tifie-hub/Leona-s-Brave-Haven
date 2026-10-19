@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Button } from "@/components/Button";
 import type { LicensedPhoto } from "@/lib/demo-media";
 
 type DogCardProps = {
@@ -33,12 +33,9 @@ export function DogCard({ slug, photo }: DogCardProps) {
         <p className="mt-4 text-xs leading-5 text-muted">
           Licensed Unsplash photograph. Not a documented rescue case.
         </p>
-        <Link
-          href={`/meet-the-dogs/${slug}`}
-          className="mt-5 inline-flex min-h-11 items-center justify-center rounded-md border-2 border-charcoal px-4 font-heading text-sm font-semibold text-charcoal hover:bg-mint"
-        >
+        <Button href={`/meet-the-dogs/${slug}`} variant="secondary" className="mt-5">
           View demonstration profile
-        </Link>
+        </Button>
       </div>
     </article>
   );

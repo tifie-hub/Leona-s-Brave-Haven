@@ -32,11 +32,11 @@ export function DonateForm() {
           Gift type
         </legend>
         <div className="grid gap-3 sm:grid-cols-2">
-          <label className="flex min-h-12 items-center gap-3 rounded-md border-2 border-[#cfcacf] bg-white px-4 has-[:checked]:border-charcoal has-[:checked]:bg-mint">
+          <label className="btn-glass flex min-h-12 items-center gap-3 rounded-md border border-white/90 bg-white/80 px-4 shadow-[0_8px_24px_rgba(48,48,48,0.08)] backdrop-blur-[16px] has-[:checked]:bg-mint/80">
             <input type="radio" name="frequency" value="one-time" defaultChecked className="accent-charcoal" />
             <span className="font-heading font-semibold">One-time</span>
           </label>
-          <label className="flex min-h-12 items-center gap-3 rounded-md border-2 border-[#cfcacf] bg-white px-4 has-[:checked]:border-charcoal has-[:checked]:bg-mint">
+          <label className="btn-glass flex min-h-12 items-center gap-3 rounded-md border border-white/90 bg-white/80 px-4 shadow-[0_8px_24px_rgba(48,48,48,0.08)] backdrop-blur-[16px] has-[:checked]:bg-mint/80">
             <input type="radio" name="frequency" value="monthly" className="accent-charcoal" />
             <span className="font-heading font-semibold">Monthly</span>
           </label>
@@ -56,7 +56,7 @@ export function DonateForm() {
           {amounts.map((amount) => (
             <label
               key={amount}
-              className="flex min-h-12 items-center justify-center rounded-md border-2 border-[#cfcacf] bg-white font-heading font-semibold has-[:checked]:border-charcoal has-[:checked]:bg-lime"
+              className="btn-glass flex min-h-12 items-center justify-center rounded-md border border-white/90 bg-white/80 font-heading font-semibold shadow-[0_8px_24px_rgba(48,48,48,0.08)] backdrop-blur-[16px] has-[:checked]:bg-lime/80"
             >
               <input
                 type="radio"

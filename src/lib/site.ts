@@ -27,6 +27,7 @@ export const addressLines = [
 ] as const;
 
 export const headerLinks = [
+  { href: "/", label: "Home" },
   { href: "/our-story", label: "Our Story" },
   { href: "/meet-the-dogs", label: "Meet the Dogs" },
   { href: "/rescue-stories", label: "Rescue Stories" },

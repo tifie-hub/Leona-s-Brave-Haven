@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
+import { Button } from "@/components/Button";
 import { headerLinks, site } from "@/lib/site";
 
 function isActive(pathname: string | null, href: string) {
@@ -15,6 +16,8 @@ function isActive(pathname: string | null, href: string) {
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
   const menuId = useId();
 
   useEffect(() => {
@@ -24,9 +27,44 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 16);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
+  useEffect(() => {
+    const bar = barRef.current;
+    if (!bar) return;
+
+    const setHeight = () => {
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${bar.offsetHeight}px`,
+      );
+    };
+
+    setHeight();
+    const observer = new ResizeObserver(setHeight);
+    observer.observe(bar);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-[#e6e2e6] bg-white">
-      <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40">
+      <div
+        aria-hidden="true"
+        className={`header-glass pointer-events-none absolute inset-0 border-b border-white shadow-[0_8px_24px_rgba(48,48,48,0.08)] backdrop-blur-[16px] transition-[background-color,box-shadow] duration-300 ${
+          scrolled
+            ? "bg-white/[0.88] shadow-[0_10px_28px_rgba(48,48,48,0.12)]"
+            : "bg-white/80"
+        }`}
+      />
+      <div
+        ref={barRef}
+        className="relative mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8"
+      >
         <Link
           href="/"
           aria-label={site.name}
@@ -60,40 +98,26 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            href="/"
-            className={`inline-flex min-h-12 items-center justify-center rounded-md border-2 px-4 py-2 text-base font-heading font-semibold transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-charcoal ${
-              isActive(pathname, "/")
-                ? "border-charcoal bg-mint text-charcoal"
-                : "border-charcoal bg-white text-charcoal hover:bg-[#f4f2f4]"
-            }`}
-            onClick={() => setOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/donate"
-            className="inline-flex min-h-12 items-center justify-center rounded-md bg-lime px-4 py-2 text-base font-heading font-semibold text-charcoal transition-colors hover:bg-[#cce600] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-charcoal"
-            onClick={() => setOpen(false)}
-          >
-            Donate to Save a Dog
-          </Link>
-          <button
+          <Button href="/donate" className="px-4" onClick={() => setOpen(false)}>
+            Donate
+          </Button>
+          <Button
             type="button"
-            className="inline-flex min-h-12 items-center rounded-md border-2 border-charcoal px-3 py-2 font-heading text-base font-semibold text-charcoal xl:hidden"
+            variant="secondary"
+            className="px-3 xl:hidden"
             aria-expanded={open}
             aria-controls={menuId}
             onClick={() => setOpen((current) => !current)}
           >
             {open ? "Close" : "Menu"}
-          </button>
+          </Button>
         </div>
       </div>
 
       {open ? (
         <div
           id={menuId}
-          className="border-t border-[#e6e2e6] bg-white xl:hidden"
+          className="relative border-t border-white/70 xl:hidden"
         >
           <nav aria-label="Mobile" className="mx-auto flex max-w-6xl flex-col px-4 py-3 sm:px-6">
             {headerLinks.map((link) => (
