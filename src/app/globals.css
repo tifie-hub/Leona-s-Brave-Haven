@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --rescue-lime: #dfff00;
+  --white: #ffffff;
+  --soft-grey: #a6a1a6;
+  --mint-teal: #b8e8e3;
+  --charcoal: #303030;
+  --medium-grey: #666666;
+  --warm-orange: #f7931e;
+}
+
+@theme inline {
+  --color-lime: #dfff00;
+  --color-soft: #a6a1a6;
+  --color-mint: #b8e8e3;
+  --color-charcoal: #303030;
+  --color-muted: #666666;
+  --color-orange: #f7931e;
+  --font-heading: var(--font-montserrat);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--charcoal);
+  font-family: var(--font-inter), "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-montserrat), "Trebuchet MS", sans-serif;
+}
+
+:focus-visible {
+  outline: 3px solid #303030;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #dfff00;
+  color: #303030;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

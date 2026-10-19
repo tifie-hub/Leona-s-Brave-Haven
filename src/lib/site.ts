@@ -1,0 +1,74 @@
+export const site = {
+  name: "Leona’s Brave Haven",
+  founder: "Linda Jenkins",
+  motto: "Saving lives. Giving hope. Changing Tomorrow.",
+  email: "leonabravehaven@gmail.com",
+  location: {
+    street: "14500 Myakka Road",
+    city: "Sarasota",
+    state: "FL",
+    zip: "34240",
+    country: "USA",
+    region: "Florida, USA",
+  },
+  impactDogsSaved: "300+",
+  rescueCadence:
+    "The organization fights high-kill shelter deadlines twice a week.",
+  description:
+    "Leona’s Brave Haven rescues abandoned and injured dogs across Florida, providing urgent care, rehabilitation, and safe shelter. More than 300 dogs have been saved, and more lives still need help.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+} as const;
+
+export const addressLines = [
+  site.name,
+  site.location.street,
+  `${site.location.city}, ${site.location.state} ${site.location.zip}`,
+  site.location.country,
+] as const;
+
+export const navLinks = [
+  { href: "/our-story", label: "Our Story" },
+  { href: "/meet-the-dogs", label: "Meet the Dogs" },
+  { href: "/rescue-stories", label: "Rescue Stories" },
+  { href: "/donate", label: "Donate" },
+  { href: "/foster-and-volunteer", label: "Foster & Volunteer" },
+  { href: "/events", label: "Events" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export const donationCategories = [
+  {
+    id: "food-shelter",
+    title: "Food and shelter",
+    summary: "Daily meals, bedding, and a safe place to rest.",
+  },
+  {
+    id: "emergency-medical",
+    title: "Emergency medical care",
+    summary: "Urgent veterinary treatment for injured and ill dogs.",
+  },
+  {
+    id: "transport",
+    title: "Rescue transportation",
+    summary: "Fuel and transport that move dogs out of high-risk situations.",
+  },
+  {
+    id: "rehabilitation",
+    title: "Rehabilitation",
+    summary: "Recovery support while dogs regain strength and trust.",
+  },
+  {
+    id: "ongoing-care",
+    title: "Ongoing care",
+    summary: "Continued care while dogs wait for a foster or adoptive home.",
+  },
+] as const;
+
+export function formatAddress(separator = "\n") {
+  return addressLines.join(separator);
+}
+
+export function mapsSearchUrl() {
+  const query = `${site.location.street}, ${site.location.city}, ${site.location.state} ${site.location.zip}, ${site.location.country}`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
