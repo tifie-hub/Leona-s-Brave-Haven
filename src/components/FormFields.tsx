@@ -75,8 +75,14 @@ export function FormStatus({
 export function Honeypot() {
   return (
     <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
-      <label htmlFor="company_website">Company website</label>
-      <input id="company_website" name="company_website" type="text" tabIndex={-1} autoComplete="off" />
+      <label htmlFor="hp_leave_empty">Leave blank</label>
+      <input
+        id="hp_leave_empty"
+        name="hp_leave_empty"
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+      />
     </div>
   );
 }

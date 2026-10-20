@@ -1,18 +1,20 @@
 import nodemailer from "nodemailer";
 import { site } from "@/lib/site";
 
+function env(name: string) {
+  return process.env[name]?.trim().replace(/^["']|["']$/g, "") ?? "";
+}
+
 export function contactInbox() {
-  return process.env.CONTACT_INBOX?.trim() || site.email;
+  return env("CONTACT_INBOX") || site.email;
 }
 
 export function emailFromAddress() {
-  return process.env.SMTP_FROM?.trim() || `${site.name} <${site.email}>`;
+  return env("SMTP_USER") || site.email;
 }
 
 export function emailConfigured() {
-  return Boolean(
-    process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS,
-  );
+  return Boolean(env("SMTP_HOST") && env("SMTP_USER") && env("SMTP_PASS"));
 }
 
 function formatFields(fields: Record<string, string | number>) {
@@ -22,17 +24,20 @@ function formatFields(fields: Record<string, string | number>) {
     .join("\n");
 }
 
-function transporter() {
-  const port = Number(process.env.SMTP_PORT || 465);
-
+function createTransporter(port: number) {
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
+    host: env("SMTP_HOST") || "mail.privateemail.com",
     port,
     secure: port === 465,
+    requireTLS: port === 587,
+    family: 4,
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+      user: env("SMTP_USER"),
+      pass: env("SMTP_PASS"),
     },
+    connectionTimeout: 15000,
+    greetingTimeout: 15000,
+    socketTimeout: 15000,
   });
 }
 
@@ -49,17 +54,28 @@ export async function sendFormEmail({
     return { sent: false as const, reason: "not_configured" };
   }
 
-  try {
-    await transporter().sendMail({
-      from: emailFromAddress(),
-      to: contactInbox(),
-      replyTo,
-      subject,
-      text: `${subject}\n\n${formatFields(fields)}\n`,
-    });
-    return { sent: true as const };
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "SMTP send failed";
-    return { sent: false as const, reason: message };
+  const preferred = Number(env("SMTP_PORT") || 465);
+  const ports = preferred === 587 ? [587, 465] : [465, 587];
+  let lastError = "SMTP send failed";
+
+  for (const port of ports) {
+    try {
+      await createTransporter(port).sendMail({
+        from: {
+          name: site.name,
+          address: emailFromAddress(),
+        },
+        to: contactInbox(),
+        replyTo,
+        subject,
+        text: `${subject}\n\n${formatFields(fields)}\n`,
+      });
+      return { sent: true as const };
+    } catch (error) {
+      lastError = error instanceof Error ? error.message : "SMTP send failed";
+      console.error(`Form email failed on port ${port}:`, lastError);
+    }
   }
+
+  return { sent: false as const, reason: lastError };
 }

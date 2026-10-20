@@ -19,13 +19,17 @@ export async function storeSubmission(
     payload,
   };
 
-  const directory = path.join(process.cwd(), "data", "submissions");
-  await mkdir(directory, { recursive: true });
-  await writeFile(
-    path.join(directory, `${record.id}.json`),
-    JSON.stringify(record, null, 2),
-    "utf8",
-  );
+  try {
+    const directory = path.join(process.cwd(), "data", "submissions");
+    await mkdir(directory, { recursive: true });
+    await writeFile(
+      path.join(directory, `${record.id}.json`),
+      JSON.stringify(record, null, 2),
+      "utf8",
+    );
+  } catch (error) {
+    console.error("Could not store submission locally:", error);
+  }
 
   return record;
 }

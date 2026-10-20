@@ -9,7 +9,7 @@ function read(formData: FormData, key: string) {
 }
 
 export function isHoneypotFilled(formData: FormData) {
-  return read(formData, "company_website").length > 0;
+  return read(formData, "hp_leave_empty").length > 0;
 }
 
 export function validateContact(formData: FormData) {

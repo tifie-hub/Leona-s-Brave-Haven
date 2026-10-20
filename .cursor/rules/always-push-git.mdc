@@ -1,0 +1,10 @@
+---
+description: Always commit completed work and push to GitHub.
+alwaysApply: true
+---
+
+# Always push to git
+
+After finishing website changes, create a git commit and push to `origin` on the current branch. Do not wait to be asked.
+
+Never commit `.env.local` or mailbox passwords.

@@ -22,7 +22,7 @@ export async function submitContact(
   if (isHoneypotFilled(formData)) {
     return {
       status: "success",
-      message: "Thank you. If a reply is needed, we will be in touch.",
+      message: "Thank you. We received your message and will reply soon.",
     };
   }
 
@@ -54,14 +54,14 @@ export async function submitContact(
     return {
       status: emailConfigured() ? "error" : "success",
       message: emailConfigured()
-        ? `Your message was saved, but email delivery failed. Please also write to ${site.email}.`
+        ? `Email delivery failed (${email.reason}). Please write to ${site.email}.`
         : `Your message was saved. Please also email ${site.email} if your request is time-sensitive.`,
     };
   }
 
   return {
     status: "success",
-    message: "Thank you. Your message has been sent. We will reply as soon as we can.",
+    message: "Thank you. We received your message and will reply soon.",
   };
 }
 
@@ -72,7 +72,7 @@ export async function submitApplication(
   if (isHoneypotFilled(formData)) {
     return {
       status: "success",
-      message: "Thank you. If a reply is needed, we will be in touch.",
+      message: "Thank you. We received your message and will reply soon.",
     };
   }
 
@@ -108,7 +108,7 @@ export async function submitApplication(
     return {
       status: emailConfigured() ? "error" : "success",
       message: emailConfigured()
-        ? `Your application was saved, but email delivery failed. Please also write to ${site.email}.`
+        ? `Email delivery failed (${email.reason}). Please write to ${site.email}.`
         : `Your application was saved. Please also email ${site.email} if you need a timely response.`,
     };
   }

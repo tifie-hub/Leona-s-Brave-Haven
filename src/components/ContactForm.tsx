@@ -30,7 +30,6 @@ export function ContactForm() {
   return (
     <form action={action} className="relative space-y-5" noValidate>
       <Honeypot />
-      <FormStatus status={pending ? "loading" : state?.status ?? "idle"} message={pending ? "Sending your message…" : state?.message} />
 
       <Field id="name" name="name" label="Full name" error={state?.errors?.name}>
         <input
@@ -120,6 +119,10 @@ export function ContactForm() {
       <Button type="submit" disabled={pending}>
         {pending ? "Sending…" : "Send message"}
       </Button>
+      <FormStatus
+        status={pending ? "loading" : state?.status ?? "idle"}
+        message={pending ? "Sending your message…" : state?.message}
+      />
     </form>
   );
 }
