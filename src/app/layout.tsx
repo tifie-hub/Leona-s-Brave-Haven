@@ -25,6 +25,13 @@ export const metadata: Metadata = {
     "emergency dog rescue",
     "help abandoned and injured dogs",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
     title: "Leona’s Brave Haven | Dog Rescue in Sarasota, Florida",
     description: site.description,
