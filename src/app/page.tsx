@@ -3,6 +3,7 @@ import { Button } from "@/components/Button";
 import { DogCard } from "@/components/DogCard";
 import { Section } from "@/components/Section";
 import { featuredDogs, featuredStories, getDog } from "@/lib/dogs";
+import { PayPalDonate, PayPalDonateForm } from "@/components/PayPalDonate";
 import { donationCategories, site } from "@/lib/site";
 
 export default function HomePage() {
@@ -39,9 +40,7 @@ export default function HomePage() {
               {site.description}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="/donate" size="lg">
-                Donate to Save a Dog
-              </Button>
+              <PayPalDonate label="Donate to Save a Dog" size="lg" />
               <Button href="/meet-the-dogs" variant="inverse" size="lg">
                 Meet the Dogs
               </Button>
@@ -192,8 +191,15 @@ export default function HomePage() {
             </article>
           ))}
         </div>
-        <div className="mt-10 text-center">
-          <Button href="/donate">Donate to Save a Dog</Button>
+        <div className="mt-10 rounded-xl bg-white p-8 text-center shadow-[0_8px_24px_rgba(48,48,48,0.06)]">
+          <h3 className="font-heading text-2xl font-bold">Donate with PayPal</h3>
+          <p className="mx-auto mt-3 max-w-xl leading-7 text-muted">
+            Gifts go through PayPal’s secure checkout. You can donate with a
+            PayPal account or a card.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <PayPalDonateForm label="Donate to Save a Dog" />
+          </div>
         </div>
       </Section>
 
@@ -238,9 +244,7 @@ export default function HomePage() {
         intro="If you can give, foster, or share this work, you help Leona’s Brave Haven keep answering urgent calls across Florida."
       >
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button href="/donate" size="lg">
-            Donate to Save a Dog
-          </Button>
+          <PayPalDonate label="Donate to Save a Dog" size="lg" />
           <Button href="/contact" variant="inverse" size="lg">
             Contact the rescue
           </Button>

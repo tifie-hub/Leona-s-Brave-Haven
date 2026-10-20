@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "How Leona’s Brave Haven uses contact, application, and donation inquiry information submitted through this website.",
+    "How Leona’s Brave Haven uses contact and application information submitted through this website.",
 };
 
 export default function PrivacyPage() {
@@ -36,9 +36,8 @@ export default function PrivacyPage() {
           <p className="mt-3">
             Contact and application forms may collect your name, email address,
             phone number, city, household notes, and the message you choose to
-            send. Donation inquiry forms may collect a gift amount, designation,
-            and optional email. A hidden field is used only to discourage
-            automated spam.
+            send. A hidden field is used only to discourage automated spam.
+            Donations are completed on PayPal, not on a form on this website.
           </p>
         </div>
         <div>
@@ -46,10 +45,10 @@ export default function PrivacyPage() {
             How information is used
           </h2>
           <p className="mt-3">
-            Submitted information is used to respond to inquiries, review
-            foster, volunteer, or adoption interest, and follow up on donation
-            requests. It is not sold. Card numbers should never be entered on
-            these forms.
+            Submitted information is used to respond to inquiries and review
+            foster, volunteer, or adoption interest. It is not sold. Card
+            numbers should never be entered on these forms. PayPal handles
+            donation payments on its own site.
           </p>
         </div>
         <div>
@@ -60,7 +59,7 @@ export default function PrivacyPage() {
             Until a transactional email service is configured, submissions may
             be stored as files on the website host so they are not lost. After
             email is connected, copies may also be delivered to the rescue
-            inbox. Hosting, payment, and email providers will have access only
+            inbox. Hosting, PayPal, and email providers will have access only
             as needed to operate those services.
           </p>
         </div>

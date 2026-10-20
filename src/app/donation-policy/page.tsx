@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { PayPalDonate } from "@/components/PayPalDonate";
 import { PageHero } from "@/components/PageHero";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Donation Policy",
   description:
-    "How donations to Leona’s Brave Haven are handled, including pending payment processing and what this website does not claim.",
+    "How donations to Leona’s Brave Haven are handled through PayPal, and what this website does not claim.",
 };
 
 export default function DonationPolicyPage() {
@@ -14,7 +15,7 @@ export default function DonationPolicyPage() {
       <PageHero
         eyebrow="Policies"
         title="Donation policy"
-        intro="This page explains the current donation process while online payments are being set up."
+        intro="Gifts to Leona’s Brave Haven are processed securely through PayPal."
       />
       <section className="mx-auto w-full max-w-3xl space-y-8 px-4 py-14 leading-8 text-muted sm:px-6">
         <div>
@@ -24,9 +25,7 @@ export default function DonationPolicyPage() {
           <p className="mt-3">
             Donations are requested to support food and shelter, emergency
             veterinary care, rescue transportation, rehabilitation, and ongoing
-            care for rescued dogs. Designations are honored when practical. If
-            a designation cannot be used as requested, the rescue should
-            contact the donor when contact details were provided.
+            care for rescued dogs.
           </p>
         </div>
         <div>
@@ -34,11 +33,13 @@ export default function DonationPolicyPage() {
             Payment processing
           </h2>
           <p className="mt-3">
-            A payment provider will be connected only after {site.name} supplies
-            a valid account and the integration is configured. Until then, the
-            donate form records an intended gift and does not charge a card.
-            Successful transactions are never simulated.
+            Online gifts are completed on PayPal. This website does not collect
+            card numbers or PayPal passwords. You can give with a PayPal account
+            or a card through PayPal’s checkout.
           </p>
+          <div className="mt-5">
+            <PayPalDonate label="Donate with PayPal" />
+          </div>
         </div>
         <div>
           <h2 className="font-heading text-2xl font-bold text-charcoal">
@@ -46,8 +47,9 @@ export default function DonationPolicyPage() {
           </h2>
           <p className="mt-3">
             This website does not claim that the organization is a registered
-            nonprofit or that gifts are tax-deductible. Ask the rescue directly
-            if you need a receipt or written confirmation of status.
+            nonprofit or that gifts are tax-deductible. PayPal may send its own
+            payment confirmation. Ask the rescue directly if you need a receipt
+            or written confirmation of status.
           </p>
         </div>
         <div>
@@ -55,9 +57,12 @@ export default function DonationPolicyPage() {
             Refunds
           </h2>
           <p className="mt-3">
-            Refund terms will follow the connected payment provider and any
-            written policy supplied by the organization. Until checkout is
-            live, no online charge is taken through this website.
+            Refund requests follow PayPal’s process and any written policy
+            supplied by the organization. Email{" "}
+            <a className="underline underline-offset-4" href={`mailto:${site.email}`}>
+              {site.email}
+            </a>{" "}
+            if you need help with a gift.
           </p>
         </div>
         <div>
@@ -69,7 +74,7 @@ export default function DonationPolicyPage() {
             <a className="underline underline-offset-4" href={`mailto:${site.email}`}>
               {site.email}
             </a>{" "}
-            before sending funds if you need current giving instructions.
+            before giving if you need current instructions.
           </p>
         </div>
       </section>

@@ -5,7 +5,6 @@ import {
   isHoneypotFilled,
   validateApplication,
   validateContact,
-  validateDonationIntent,
 } from "@/lib/validation";
 
 export type ActionResult = {
@@ -16,10 +15,6 @@ export type ActionResult = {
 
 function emailConfigured() {
   return Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_INBOX);
-}
-
-function stripeConfigured() {
-  return Boolean(process.env.STRIPE_SECRET_KEY && process.env.NEXT_PUBLIC_SITE_URL);
 }
 
 export async function submitContact(
@@ -91,41 +86,5 @@ export async function submitApplication(
   return {
     status: "success",
     message: "Thank you. Your application was received and will be reviewed.",
-  };
-}
-
-export async function submitDonationIntent(
-  _prev: ActionResult | null,
-  formData: FormData,
-): Promise<ActionResult> {
-  if (isHoneypotFilled(formData)) {
-    return {
-      status: "success",
-      message: "Thank you for your interest in supporting rescue work.",
-    };
-  }
-
-  const { values, errors, valid } = validateDonationIntent(formData);
-  if (!valid) {
-    return {
-      status: "error",
-      message: "Please correct the highlighted fields and try again.",
-      errors,
-    };
-  }
-
-  await storeSubmission("donation-intent", values);
-
-  if (!stripeConfigured()) {
-    return {
-      status: "not_configured",
-      message:
-        "Online payment processing is not connected yet. Your gift details were recorded as an inquiry. To donate now, email leonabravehaven@gmail.com and the team can share current giving instructions.",
-    };
-  }
-
-  return {
-    status: "success",
-    message: "Continuing to the payment provider is not available until checkout is fully configured.",
   };
 }

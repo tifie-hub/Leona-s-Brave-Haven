@@ -54,6 +54,18 @@ export function Button({
 
   if ("href" in props && props.href) {
     const { href, target, rel, onClick } = props;
+    const external = href.startsWith("http://") || href.startsWith("https://");
+    const linkTarget = target ?? (external ? "_blank" : undefined);
+    const linkRel = rel ?? (external ? "noopener noreferrer" : undefined);
+
+    if (external) {
+      return (
+        <a href={href} className={classes} target={linkTarget} rel={linkRel} onClick={onClick}>
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={classes} target={target} rel={rel} onClick={onClick}>
         {children}

@@ -3,7 +3,7 @@ import path from "node:path";
 
 export type SubmissionRecord = {
   id: string;
-  type: "contact" | "application" | "donation-intent";
+  type: "contact" | "application";
   createdAt: string;
   payload: Record<string, string | number>;
 };

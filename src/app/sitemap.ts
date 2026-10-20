@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/our-story",
     "/meet-the-dogs",
     "/rescue-stories",
-    "/donate",
     "/foster-and-volunteer",
     "/events",
     "/contact",
@@ -20,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = routes.map((route) => ({
     url: `${site.url}${route}`,
     changeFrequency: route === "" || route === "/meet-the-dogs" ? "weekly" : "monthly",
-    priority: route === "" || route === "/donate" ? 1 : 0.7,
+    priority: route === "" ? 1 : 0.7,
   })) satisfies MetadataRoute.Sitemap;
 
   const profiles = dogs.map((dog) => ({

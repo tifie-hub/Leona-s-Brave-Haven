@@ -26,13 +26,11 @@ Copy `.env.example` to `.env.local` and add credentials only when they are avail
 
 | Variable | Required now | Purpose |
 |---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Recommended | Canonical URL for metadata and later payment returns |
+| `NEXT_PUBLIC_SITE_URL` | Recommended | Canonical URL for metadata |
 | `RESEND_API_KEY` | No | Transactional email for form notifications |
 | `CONTACT_INBOX` | No | Inbox that should receive form emails |
-| `STRIPE_SECRET_KEY` | No | Payment checkout, after a verified account exists |
-| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | No | Browser Stripe key, after a verified account exists |
 
-Without email credentials, forms still validate and save a JSON record in `data/submissions/`. Without Stripe, the donation form records an intended gift and does not charge a card.
+Without email credentials, forms still validate and save a JSON record in `data/submissions/`. Donations are completed on PayPal.
 
 ## Deploy
 
@@ -40,13 +38,12 @@ The app is a standard Next.js project and can be deployed to Vercel or any Node 
 
 1. Push the repository.
 2. Set `NEXT_PUBLIC_SITE_URL` to the public domain.
-3. Add email and payment keys only after the organization supplies them.
-4. Add email and payment keys only after the organization supplies them.
+3. Add email keys only after the organization supplies them.
 
 ## Production notes
 
 - Dog listings and rescue stories use organization-supplied photographs and edited stories.
-- Online payments are not connected until Stripe keys are added.
+- Donations are processed through the organization’s PayPal donate button.
 - Transactional email is not connected until Resend keys are added.
 - Nonprofit or tax-deductible status is not claimed because it has not been verified.
 - A map embed is intentionally omitted until the address pin is confirmed.

@@ -98,7 +98,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button href="/donate" className="px-4" onClick={() => setOpen(false)}>
+          <Button href={site.donateUrl} className="px-4" onClick={() => setOpen(false)}>
             Donate
           </Button>
           <Button

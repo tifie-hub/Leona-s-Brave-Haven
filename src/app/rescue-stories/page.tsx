@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { featuredStories } from "@/lib/dogs";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Rescue Stories",
@@ -48,7 +49,7 @@ export default function RescueStoriesPage() {
                 ) : null}
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Button href={`/meet-the-dogs/${dog.slug}`}>Meet {dog.name}</Button>
-                  <Button href="/donate" variant="secondary">
+                  <Button href={site.donateUrl} variant="secondary">
                     Support the next rescue
                   </Button>
                 </div>

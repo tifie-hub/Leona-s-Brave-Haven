@@ -36,16 +36,30 @@ export function Footer() {
             Explore
           </p>
           <ul className="mt-4 space-y-2">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-white/85 underline-offset-4 hover:text-white hover:underline"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const external = link.href.startsWith("http");
+              const className =
+                "text-white/85 underline-offset-4 hover:text-white hover:underline";
+
+              return (
+                <li key={link.href}>
+                  {external ? (
+                    <a
+                      href={link.href}
+                      className={className}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className={className}>
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
             {policyLinks.map((link) => (
               <li key={link.href}>
                 <Link

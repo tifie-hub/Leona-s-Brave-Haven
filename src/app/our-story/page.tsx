@@ -105,7 +105,7 @@ export default function OurStoryPage() {
               of help.
             </p>
           </div>
-          <Button href="/donate">Donate to Save a Dog</Button>
+          <Button href={site.donateUrl}>Donate to Save a Dog</Button>
         </div>
       </section>
     </>

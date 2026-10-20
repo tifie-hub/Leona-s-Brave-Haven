@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "How do donations help?",
-    a: "Donations support food and shelter, emergency veterinary care, rescue transportation, rehabilitation, and ongoing care while dogs wait for a home. Specific dollar-to-treatment claims are not made unless they can be verified.",
+    a: "Donations support food and shelter, emergency veterinary care, rescue transportation, rehabilitation, and ongoing care while dogs wait for a home. Use the Donate button to give securely through PayPal. Specific dollar-to-treatment claims are not made unless they can be verified.",
   },
   {
     q: "Are donations tax-deductible?",
