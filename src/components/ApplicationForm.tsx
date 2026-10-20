@@ -16,7 +16,6 @@ const initial: ActionResult | null = null;
 
 const interests = [
   "Adoption inquiry",
-  "Foster a dog",
   "Volunteer at events or with care",
   "Rescue transport",
   "Supplies or professional support",

@@ -6,7 +6,7 @@ import { mapsSearchUrl, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Leona’s Brave Haven in Sarasota, Florida for adoption, fostering, donations, or rescue questions.",
+    "Contact Leona’s Brave Haven in Sarasota, Florida for adoption, donations, or rescue questions.",
 };
 
 export default function ContactPage() {

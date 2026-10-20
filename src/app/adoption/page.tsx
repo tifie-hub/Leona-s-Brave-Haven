@@ -97,8 +97,8 @@ export default function AdoptionPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href={`mailto:${site.email}`}>Email {site.email}</Button>
-              <Button href="/foster-and-volunteer" variant="secondary">
-                Foster instead
+              <Button href="/contact" variant="secondary">
+                Contact the rescue
               </Button>
             </div>
           </div>

@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     "dog rescue in Sarasota, Florida",
     "Florida dog rescue",
     "adopt a rescued dog in Florida",
-    "foster a rescue dog",
     "emergency dog rescue",
     "help abandoned and injured dogs",
   ],

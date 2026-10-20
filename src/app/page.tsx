@@ -110,7 +110,7 @@ export default function HomePage() {
               <li className="border-l-4 border-lime pl-4">Urgent rescue and transport</li>
               <li className="border-l-4 border-lime pl-4">Medical care and rehabilitation</li>
               <li className="border-l-4 border-lime pl-4">Safe shelter while dogs heal</li>
-              <li className="border-l-4 border-lime pl-4">A path toward foster and adoption</li>
+              <li className="border-l-4 border-lime pl-4">A path toward adoption</li>
             </ul>
             <div className="mt-8">
               <Button href="/our-story" variant="secondary">
@@ -125,7 +125,7 @@ export default function HomePage() {
         tone="soft"
         eyebrow="Meet the dogs"
         title="Dogs looking for a home"
-        intro="Frida, Lola, Darko, and many others are waiting for a foster family or a forever home."
+        intro="Frida, Lola, Darko, and many others are waiting for a forever home."
       >
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {dogs.map((dog) => (
@@ -222,44 +222,9 @@ export default function HomePage() {
       </Section>
 
       <Section
-        eyebrow="Get involved"
-        title="Foster, transport, and volunteer"
-        intro="Dogs need more than a rescue pull. They need temporary homes, safe rides, and people who can help with care and community events."
-      >
-        <div className="grid gap-6 md:grid-cols-3">
-          <article className="rounded-xl border border-[#e6e2e6] p-6">
-            <h3 className="font-heading text-xl font-bold">Foster a rescue dog</h3>
-            <p className="mt-3 leading-7 text-muted">
-              Open a spare room or quiet corner so a dog can recover outside a
-              crowded shelter environment.
-            </p>
-          </article>
-          <article className="rounded-xl border border-[#e6e2e6] p-6">
-            <h3 className="font-heading text-xl font-bold">Help with transport</h3>
-            <p className="mt-3 leading-7 text-muted">
-              Volunteer drivers help move dogs out of high-risk situations and
-              toward veterinary care or foster homes.
-            </p>
-          </article>
-          <article className="rounded-xl border border-[#e6e2e6] p-6">
-            <h3 className="font-heading text-xl font-bold">Volunteer your time</h3>
-            <p className="mt-3 leading-7 text-muted">
-              Shelter assistance, adoption support, and community outreach all
-              keep the rescue moving.
-            </p>
-          </article>
-        </div>
-        <div className="mt-10 text-center">
-          <Button href="/foster-and-volunteer" variant="secondary">
-            Apply to help
-          </Button>
-        </div>
-      </Section>
-
-      <Section
         tone="charcoal"
         title="Another dog is waiting for a second chance"
-        intro="If you can give, foster, or share this work, you help Leona’s Brave Haven keep answering urgent calls across Florida."
+        intro="If you can give or share this work, you help Leona’s Brave Haven keep answering urgent calls across Florida."
       >
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
           <PayPalDonate label="Donate to Save a Dog" size="lg" />

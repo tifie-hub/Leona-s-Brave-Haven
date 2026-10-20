@@ -91,7 +91,7 @@ export async function submitApplication(
     subject: `Website application: ${values.interest}`,
     replyTo: values.email,
     fields: {
-      Form: "Foster and volunteer",
+      Form: "Website application",
       Interest: values.interest,
       Name: values.name,
       Email: values.email,

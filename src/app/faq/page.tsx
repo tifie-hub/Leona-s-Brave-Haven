@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers about adopting, fostering, donating, and contacting Leona’s Brave Haven, a dog rescue in Sarasota, Florida.",
+    "Answers about adopting, donating, and contacting Leona’s Brave Haven, a dog rescue in Sarasota, Florida.",
 };
 
 const faqs = [
@@ -18,10 +18,6 @@ const faqs = [
     a: "Browse the Adoption page or Meet the Dogs, then start an adoption inquiry or email the rescue. Placement depends on a good match for the dog and household.",
   },
   {
-    q: "Can I foster a rescue dog?",
-    a: "Yes, foster homes are one of the most useful ways to help. Use the foster and volunteer form to describe your space, household, and availability. Placement is never guaranteed from a form alone.",
-  },
-  {
     q: "How do donations help?",
     a: "Donations support food and shelter, emergency veterinary care, rescue transportation, rehabilitation, and ongoing care while dogs wait for a home. Use the Donate button to give securely through PayPal. Specific dollar-to-treatment claims are not made unless they can be verified.",
   },
@@ -31,7 +27,7 @@ const faqs = [
   },
   {
     q: "Can I volunteer or help with transport?",
-    a: "Yes. Drivers, shelter helpers, and event volunteers are all needed. Send an application or email with your location and the kind of help you can offer.",
+    a: "Yes. Drivers, shelter helpers, and community volunteers are all needed. Use the contact form or email with your location and the kind of help you can offer.",
   },
   {
     q: "Do you accept dogs from high-kill shelters?",

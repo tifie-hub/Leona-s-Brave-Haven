@@ -38,7 +38,6 @@ export const headerLinks = [
   { href: "/our-story", label: "Our Story" },
   { href: "/meet-the-dogs", label: "Meet the Dogs" },
   { href: "/rescue-stories", label: "Rescue Stories" },
-  { href: "/foster-and-volunteer", label: "Foster" },
   { href: "/adoption", label: "Adoption" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -49,7 +48,6 @@ export const navLinks = [
   { href: "/meet-the-dogs", label: "Meet the Dogs" },
   { href: "/rescue-stories", label: "Rescue Stories" },
   { href: site.donateUrl, label: "Donate" },
-  { href: "/foster-and-volunteer", label: "Foster & Volunteer" },
   { href: "/adoption", label: "Adoption" },
   { href: "/contact", label: "Contact" },
 ] as const;

@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
         destination: "/adoption",
         permanent: true,
       },
+      {
+        source: "/foster-and-volunteer",
+        destination: "/contact",
+        permanent: true,
+      },
     ];
   },
   turbopack: {
