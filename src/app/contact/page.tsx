@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { mapsSearchUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -45,18 +46,10 @@ export default function ContactPage() {
               Search this address in Google Maps
             </a>
           </p>
-          <p className="mt-8 max-w-md leading-7 text-muted">
-            Message the rescue on WhatsApp:{" "}
-            <a
-              className="font-semibold underline underline-offset-4"
-              href={site.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Leona’s Brave Haven
-            </a>
-            .
-          </p>
+          <div className="mt-8 flex items-center gap-3">
+            <WhatsAppLink />
+            <p className="leading-7 text-muted">Message the rescue on WhatsApp.</p>
+          </div>
           <p className="mt-4 max-w-md leading-7 text-muted">
             Watch rescue videos and updates on YouTube:{" "}
             <a
