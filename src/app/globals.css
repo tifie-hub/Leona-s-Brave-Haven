@@ -85,8 +85,8 @@ h4,
 
 .whatsapp-float {
   position: fixed !important;
-  left: 1rem !important;
-  right: auto !important;
+  right: 1rem !important;
+  left: auto !important;
   bottom: 1.25rem !important;
   z-index: 60;
 }

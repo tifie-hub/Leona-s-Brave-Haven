@@ -29,7 +29,7 @@ export function WhatsAppLink({
       }
       style={
         floating
-          ? { position: "fixed", left: 16, right: "auto", bottom: 20, zIndex: 60 }
+          ? { position: "fixed", right: 16, left: "auto", bottom: 20, zIndex: 60 }
           : undefined
       }
       onClick={onClick}
