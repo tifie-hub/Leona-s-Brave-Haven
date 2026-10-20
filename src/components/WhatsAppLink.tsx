@@ -16,22 +16,13 @@ export function WhatsAppLink({
 }: WhatsAppLinkProps) {
   const iconSize = size ?? (floating ? 64 : 40);
 
-  return (
+  const icon = (
     <a
       href={site.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Message Leona’s Brave Haven on WhatsApp"
-      className={
-        floating
-          ? `whatsapp-float inline-flex rounded-full shadow-[0_10px_28px_rgba(48,48,48,0.28)] transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-charcoal ${className}`
-          : `inline-flex shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-charcoal ${className}`
-      }
-      style={
-        floating
-          ? { position: "fixed", right: 16, left: "auto", bottom: 20, zIndex: 60 }
-          : undefined
-      }
+      className={`inline-flex shrink-0 items-center justify-center rounded-full shadow-[0_10px_28px_rgba(48,48,48,0.28)] transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-charcoal ${className}`}
       onClick={onClick}
     >
       <Image
@@ -43,5 +34,15 @@ export function WhatsAppLink({
         style={{ width: iconSize, height: iconSize }}
       />
     </a>
+  );
+
+  if (!floating) return icon;
+
+  return (
+    <div className="whatsapp-float pointer-events-none">
+      <div className="mx-auto flex w-full max-w-6xl justify-end px-4 sm:px-6 lg:px-8">
+        <div className="pointer-events-auto">{icon}</div>
+      </div>
+    </div>
   );
 }
