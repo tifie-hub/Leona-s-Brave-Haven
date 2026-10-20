@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { getDog } from "@/lib/dogs";
 import { site } from "@/lib/site";
 
@@ -50,6 +51,22 @@ export default function OurStoryPage() {
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h2 className="font-heading text-3xl font-bold">Watch the work</h2>
+          <p className="mt-4 max-w-3xl leading-8 text-muted">
+            Rescue videos and updates are published on the official YouTube
+            channel, @leonabravehaven.
+          </p>
+          <div className="mx-auto mt-8 max-w-4xl">
+            <YouTubeEmbed />
+          </div>
+          <div className="mt-6">
+            <Button href={site.youtubeUrl} variant="secondary">
+              Watch on YouTube
+            </Button>
           </div>
         </div>
       </section>

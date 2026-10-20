@@ -102,6 +102,16 @@ export function Footer() {
                 Open address in Google Maps
               </a>
             </p>
+            <p className="mt-3">
+              <a
+                href={site.youtubeUrl}
+                className="underline underline-offset-4 hover:text-lime"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                YouTube
+              </a>
+            </p>
           </address>
         </div>
       </div>

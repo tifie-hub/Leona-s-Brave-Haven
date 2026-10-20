@@ -47,4 +47,4 @@ The app is a standard Next.js project and can be deployed to Vercel or any Node 
 - Transactional email is not connected until Resend keys are added.
 - Nonprofit or tax-deductible status is not claimed because it has not been verified.
 - A map embed is intentionally omitted until the address pin is confirmed.
-- No social profiles are linked because none were verified.
+- The official YouTube channel, @leonabravehaven, is linked and embedded.

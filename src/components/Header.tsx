@@ -98,6 +98,16 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <div className="hidden xl:block">
+            <Button
+              href={site.youtubeUrl}
+              variant="secondary"
+              className="px-4"
+              onClick={() => setOpen(false)}
+            >
+              YouTube
+            </Button>
+          </div>
           <Button href={site.donateUrl} className="px-4" onClick={() => setOpen(false)}>
             Donate
           </Button>
@@ -134,6 +144,16 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <div className="px-3 py-2">
+              <Button
+                href={site.youtubeUrl}
+                variant="secondary"
+                className="w-full"
+                onClick={() => setOpen(false)}
+              >
+                YouTube
+              </Button>
+            </div>
           </nav>
         </div>
       ) : null}

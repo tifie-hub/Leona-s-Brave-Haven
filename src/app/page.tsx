@@ -4,6 +4,7 @@ import { DogCard } from "@/components/DogCard";
 import { Section } from "@/components/Section";
 import { featuredDogs, featuredStories, getDog } from "@/lib/dogs";
 import { PayPalDonate, PayPalDonateForm } from "@/components/PayPalDonate";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { donationCategories, site } from "@/lib/site";
 
 export default function HomePage() {
@@ -173,6 +174,22 @@ export default function HomePage() {
         <div className="mt-10 text-center">
           <Button href="/rescue-stories" variant="secondary">
             More rescue stories
+          </Button>
+        </div>
+      </Section>
+
+      <Section
+        tone="soft"
+        eyebrow="On YouTube"
+        title="Watch the rescue work"
+        intro="Rescue videos, recovery journeys, and adoption updates from Leona’s Brave Haven."
+      >
+        <div className="mx-auto max-w-4xl">
+          <YouTubeEmbed />
+        </div>
+        <div className="mt-8 text-center">
+          <Button href={site.youtubeUrl} variant="secondary">
+            Watch on YouTube
           </Button>
         </div>
       </Section>

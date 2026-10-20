@@ -19,7 +19,12 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   paypalHostedButtonId: "BCWDQY5X9Y9Q4",
   donateUrl: "https://www.paypal.com/donate/?hosted_button_id=BCWDQY5X9Y9Q4",
+  youtubeUrl: "https://www.youtube.com/@leonabravehaven",
+  youtubeChannelId: "UCqegNAo2TN2N5S4sVq_ADWQ",
+  youtubeLatestVideoId: "tBygQvb5Q7I",
 } as const;
+
+export const youtubeEmbedUrl = `https://www.youtube.com/embed/${site.youtubeLatestVideoId}?list=UU${site.youtubeChannelId.slice(2)}`;
 
 export const addressLines = [
   site.name,

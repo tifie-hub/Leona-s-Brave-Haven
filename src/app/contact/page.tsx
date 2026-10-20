@@ -46,8 +46,16 @@ export default function ContactPage() {
             </a>
           </p>
           <p className="mt-8 max-w-md leading-7 text-muted">
-            Social profiles will be linked here only after they are verified.
-            No unofficial pages are listed.
+            Watch rescue videos and updates on YouTube:{" "}
+            <a
+              className="font-semibold underline underline-offset-4"
+              href={site.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @leonabravehaven
+            </a>
+            .
           </p>
         </div>
 

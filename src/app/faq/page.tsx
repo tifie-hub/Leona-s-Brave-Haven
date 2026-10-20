@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Can I share a rescue story or video?",
-    a: "Authorized stories and videos are welcome. Use the contact form and choose the media topic so the team can review what may be published.",
+    a: "Watch official rescue videos on the YouTube channel @leonabravehaven. Authorized stories and videos from supporters are welcome through the contact form so the team can review what may be published.",
   },
   {
     q: "How do I contact the rescue?",
