@@ -15,7 +15,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Get in touch"
         title="Contact Leona’s Brave Haven"
-        intro="Reach the rescue by email or send a message through the form. A map embed will be added only after the listed address is confirmed as a public pin."
+        intro="Reach the rescue by email, WhatsApp, or the form on this page. A map embed will be added only after the listed address is confirmed as a public pin."
       />
 
       <section className="mx-auto grid w-full max-w-6xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -46,6 +46,18 @@ export default function ContactPage() {
             </a>
           </p>
           <p className="mt-8 max-w-md leading-7 text-muted">
+            Message the rescue on WhatsApp:{" "}
+            <a
+              className="font-semibold underline underline-offset-4"
+              href={site.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Leona’s Brave Haven
+            </a>
+            .
+          </p>
+          <p className="mt-4 max-w-md leading-7 text-muted">
             Watch rescue videos and updates on YouTube:{" "}
             <a
               className="font-semibold underline underline-offset-4"

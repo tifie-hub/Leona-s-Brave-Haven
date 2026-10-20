@@ -412,6 +412,58 @@ export const dogs: Dog[] = [
     ],
   },
   {
+    slug: "jefa",
+    name: "Jefa",
+    status: "available",
+    sex: "Female",
+    summary:
+      "A watchful brindle girl with a red collar, rescued alongside Wats and looking for a home of her own.",
+    temperament: "Alert, loyal, and steadier when she has a person to follow",
+    care: "A home that can give her structure and time to settle after kennel life",
+    story: [
+      "Jefa came into rescue with Wats. They had been sharing a kennel run, and she was the one who stood taller, watching every person who passed the glass.",
+      "She is a dark brindle girl with a white chest and a serious, hopeful face. She is looking for a home that will let her keep that watchful loyalty and finally step out of a kennel for good.",
+    ],
+    images: [
+      { src: "/images/dogs/jefa-and-wats.jpeg", alt: "Jefa, a dark brindle rescue dog with a red collar, standing with Wats" },
+    ],
+  },
+  {
+    slug: "wats",
+    name: "Wats",
+    status: "available",
+    sex: "Male",
+    summary:
+      "A brown boy with a blue collar, rescued with Jefa and waiting for people of his own.",
+    temperament: "Gentle, people-oriented, and a little quieter than his kennel-mate",
+    care: "A patient home and the chance to learn that visitors mean good news",
+    story: [
+      "Wats was pulled with Jefa from the same kennel. He is the brown boy with the blue collar, standing close and looking straight at whoever stops to see them.",
+      "He is softer in his approach than his kennel-mate and still learning that a hand at the door can be kind. He is ready for a home that will keep him close and give him a life beyond that run.",
+    ],
+    images: [
+      { src: "/images/dogs/jefa-and-wats.jpeg", alt: "Wats, a brown rescue dog with a blue collar, standing with Jefa" },
+    ],
+  },
+  {
+    slug: "penny",
+    name: "Penny",
+    status: "adopted",
+    sex: "Female",
+    summary:
+      "Left behind in a Palmdale, California shelter after her owner was taken away. She is now safe in her forever home.",
+    temperament: "Sweet, sensitive, and deeply attached once she trusts someone",
+    care: "A forever home that can keep her close after a frightening start",
+    story: [
+      "The heavy metal doors of the shelter in Palmdale, California, carried a lot of noise and uncertainty. Inside a quiet enclosure, a sweet white-and-brown dog named Penny sat waiting. Her world turned over when she saw her owner arrested and taken away. Her owner was later released, but Penny was left in the kennel, watching for someone who was not coming back.",
+      "Fear and confusion stayed with her for a long time. The story did not end in that concrete room. The team at Leona’s Brave Haven refused to give up on her, and she was safely rescued from the shelter.",
+      "Today the sorrow of that beginning is behind her. Penny is surrounded by love, comfort, and safety, living her best life in her forever home.",
+    ],
+    images: [
+      { src: "/images/dogs/penny.jpeg", alt: "Penny, a white-and-brown rescue dog looking through shelter kennel bars" },
+    ],
+  },
+  {
     slug: "flo",
     name: "Flo",
     status: "adopted",
@@ -720,8 +772,9 @@ export const dogs: Dog[] = [
 ];
 
 export const featuredDogSlugs = ["frida", "lola", "darko"] as const;
-export const featuredStorySlugs = ["lola", "darko", "betty", "nina", "flo", "tina", "melly"] as const;
+export const featuredStorySlugs = ["penny", "lola", "darko", "betty", "nina", "flo", "tina", "melly"] as const;
 export const adoptionDogSlugs = [
+  "penny",
   "flo",
   "poppy",
   "lana",

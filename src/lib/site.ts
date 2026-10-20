@@ -22,6 +22,7 @@ export const site = {
   youtubeUrl: "https://www.youtube.com/@leonabravehaven",
   youtubeChannelId: "UCqegNAo2TN2N5S4sVq_ADWQ",
   youtubeLatestVideoId: "tBygQvb5Q7I",
+  whatsappUrl: "https://wa.me/message/YDPE6CDH6OSJD1",
 } as const;
 
 export const youtubeEmbedUrl = `https://www.youtube.com/embed/${site.youtubeLatestVideoId}?list=UU${site.youtubeChannelId.slice(2)}`;
