@@ -132,7 +132,8 @@ export default function HomePage() {
             <DogCard key={dog.slug} dog={dog} />
           ))}
         </div>
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button href="/adoption">See dogs for adoption</Button>
           <Button href="/meet-the-dogs" variant="secondary">
             View all dogs
           </Button>

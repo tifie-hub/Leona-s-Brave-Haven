@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/meet-the-dogs",
     "/rescue-stories",
     "/foster-and-volunteer",
-    "/events",
+    "/adoption",
     "/contact",
     "/faq",
     "/privacy",

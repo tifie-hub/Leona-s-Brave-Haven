@@ -105,7 +105,7 @@ export default async function DogProfilePage({
           </dl>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="/foster-and-volunteer#application">
+            <Button href="/adoption#inquiry">
               {dog.status === "reserved" ? `Ask about ${dog.name}` : `Start an inquiry for ${dog.name}`}
             </Button>
             <Button href="/meet-the-dogs" variant="secondary">

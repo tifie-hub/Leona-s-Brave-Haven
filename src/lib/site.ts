@@ -39,7 +39,7 @@ export const headerLinks = [
   { href: "/meet-the-dogs", label: "Meet the Dogs" },
   { href: "/rescue-stories", label: "Rescue Stories" },
   { href: "/foster-and-volunteer", label: "Foster" },
-  { href: "/events", label: "Events" },
+  { href: "/adoption", label: "Adoption" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -50,7 +50,7 @@ export const navLinks = [
   { href: "/rescue-stories", label: "Rescue Stories" },
   { href: site.donateUrl, label: "Donate" },
   { href: "/foster-and-volunteer", label: "Foster & Volunteer" },
-  { href: "/events", label: "Events" },
+  { href: "/adoption", label: "Adoption" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

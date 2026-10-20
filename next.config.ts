@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         destination: "https://www.paypal.com/donate/?hosted_button_id=BCWDQY5X9Y9Q4",
         permanent: true,
       },
+      {
+        source: "/events",
+        destination: "/adoption",
+        permanent: true,
+      },
     ];
   },
   turbopack: {

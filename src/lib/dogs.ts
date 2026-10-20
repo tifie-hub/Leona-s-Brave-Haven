@@ -411,10 +411,335 @@ export const dogs: Dog[] = [
       { src: "/images/dogs/vuki.webp", alt: "Vuki, a rescue dog looking for a home" },
     ],
   },
+  {
+    slug: "flo",
+    name: "Flo",
+    status: "available",
+    sex: "Female",
+    age: "Young adult",
+    summary:
+      "A fluffy black girl with one blue eye and one brown eye, finally ready to be someone’s unmistakable companion.",
+    temperament: "Affectionate, watchful, and eager for a familiar person",
+    care: "A home that will keep her close and enjoy a soft-coated companion",
+    story: [
+      "Flo has one ice-blue eye and one warm brown eye, and that is how a neighbor first remembered her. She kept appearing at the same fence post along a quiet rural road, waiting as if someone familiar might still come back.",
+      "When she finally leaned into a hand, the rescue was called. Under the long black coat is a girl who wants to stay near her people. She is ready for a home that will not leave her watching the road.",
+    ],
+    images: [
+      { src: "/images/dogs/flo.webp", alt: "Flo, a fluffy black rescue dog with one blue eye and one brown eye" },
+    ],
+  },
+  {
+    slug: "poppy",
+    name: "Poppy",
+    status: "available",
+    sex: "Female",
+    age: "Young adult",
+    summary:
+      "A lean, goofy girl who shadowed a walker along a pebble creek path and refused to turn back.",
+    temperament: "Playful, people-focused, and full of bounce",
+    care: "Daily walks and a home that enjoys a slim, athletic companion",
+    story: [
+      "Poppy attached herself to a walker on a pebble path beside a creek. She kept pace, tongue out, as if the outing had always been hers. When the walker stopped, she sat and waited instead of running off.",
+      "She is a slim, dark girl with a quick smile and a lot of goofy charm. She needs a person who wants a walking partner and will let her keep that joyful, slightly silly spirit.",
+    ],
+    images: [
+      { src: "/images/dogs/poppy.webp", alt: "Poppy, a slim dark rescue dog on a pebble path" },
+    ],
+  },
+  {
+    slug: "lana",
+    name: "Lana",
+    status: "available",
+    sex: "Female",
+    age: "Adult",
+    summary:
+      "An athletic black-and-tan girl surrendered when her person began traveling for work.",
+    temperament: "Social, bright, and happiest with company",
+    care: "Regular exercise and a household that is home more often than away",
+    story: [
+      "Lana’s person took a job that meant long stretches on the road. She is built for movement and company, and an empty house was the wrong life for her. She was surrendered so she would not spend her days waiting at a door.",
+      "In care she is alert, polite with other dogs, and visibly happier when someone is nearby. She is looking for a home that can share walks, training, and ordinary days together.",
+    ],
+    images: [
+      { src: "/images/dogs/lana.jpg", alt: "Lana, a black-and-tan athletic rescue dog in a play yard" },
+    ],
+  },
+  {
+    slug: "timo",
+    name: "Timo",
+    status: "available",
+    sex: "Male",
+    age: "Adult",
+    summary:
+      "A hound with a pink nose who wandered onto a ball field and sat down as if he had joined the team.",
+    temperament: "Friendly, scent-curious, and easy with people",
+    care: "Secure fences and walks that let him use his nose",
+    story: [
+      "Timo walked onto a community ball field during evening practice and sat at the fence as if he belonged there. The coach kept an eye on him through the last inning, then called for help rather than leave a friendly hound on the field.",
+      "He is a tan-and-white boy with a pink nose and a soft mouth. He will do best with people who understand a hound’s nose and will keep him on a leash or inside a secure yard.",
+    ],
+    images: [
+      { src: "/images/dogs/timo.jpg", alt: "Timo, a tan-and-white hound mix being petted" },
+    ],
+  },
+  {
+    slug: "zuja",
+    name: "Zuja",
+    status: "available",
+    sex: "Female",
+    age: "Young adult",
+    summary:
+      "A quiet tan girl found sleeping in the shade of a construction trailer, then waiting for the crew each morning.",
+    temperament: "Calm, observant, and gently social",
+    care: "A steady routine and time to warm up in a new home",
+    story: [
+      "A construction crew found Zuja sleeping in the shade of a parked trailer. She was still there the next morning, and the morning after that, as if the job site had become her only landmark.",
+      "She is a slender tan girl who watches first and then steps forward. She lives easily around other dogs and is ready for a quieter home that can give her a real place to rest.",
+    ],
+    images: [
+      { src: "/images/dogs/zuja.jpg", alt: "Zuja, a slender tan rescue dog standing in a gravel yard" },
+    ],
+  },
+  {
+    slug: "gari",
+    name: "Gari",
+    status: "available",
+    sex: "Male",
+    age: "Adult",
+    summary:
+      "A water-loving black dog coaxed out of a canal behind a shopping plaza.",
+    temperament: "Easygoing, outdoor-loving, and people-friendly",
+    care: "Swims when he can; needs a home that enjoys active outings",
+    story: [
+      "Gari was seen swimming laps in a shallow canal behind a shopping plaza. A shop owner lured him out with leftover lunch and kept him safe until the rescue arrived, still dripping and completely unbothered.",
+      "He is a glossy black boy who lights up near water and muddy paths. He wants a home that will let him hike, splash, and then dry off on a real bed.",
+    ],
+    images: [
+      { src: "/images/dogs/gari.webp", alt: "Gari, a wet black rescue dog standing by a creek" },
+    ],
+  },
+  {
+    slug: "brko",
+    name: "Brko",
+    status: "available",
+    sex: "Male",
+    age: "Adult",
+    summary:
+      "A scruffy cream terrier left in a crate after a weekend of boarding that nobody returned for.",
+    temperament: "Cheerful, affectionate, and ready to be a house dog",
+    care: "Regular grooming for his wiry coat and a person who likes a small shadow",
+    story: [
+      "Brko was left in a crate on a porch after a short boarding stay. The weekend ended, no one came back, and a wiry cream dog with a wet grin was still waiting on the lead.",
+      "He is a small terrier mix who treats every walk like good news. He is looking for a home that will keep him indoors, brush that scruffy coat, and let him follow from room to room.",
+    ],
+    images: [
+      { src: "/images/dogs/brko.webp", alt: "Brko, a scruffy cream terrier mix on a red leash" },
+    ],
+  },
+  {
+    slug: "mindy",
+    name: "Mindy",
+    status: "available",
+    sex: "Female",
+    age: "Adult",
+    summary:
+      "A calm black girl handed over at a clinic when her housing no longer allowed dogs.",
+    temperament: "Steady, polite, and quietly affectionate",
+    care: "A predictable home and a person who enjoys an easy walking partner",
+    story: [
+      "Mindy was turned in at a veterinary clinic checkout. Her person was moving into housing that did not allow dogs. She was healthy, leashed, and suddenly without a place to go.",
+      "She is a black girl with a composed face and a soft way of standing beside people. She does not ask loudly for attention. She needs a home that notices her anyway.",
+    ],
+    images: [
+      { src: "/images/dogs/mindy.jpg", alt: "Mindy, a black rescue dog standing beside a volunteer" },
+    ],
+  },
+  {
+    slug: "gara",
+    name: "Gara",
+    status: "available",
+    sex: "Female",
+    age: "Adult",
+    summary:
+      "A thoughtful brown girl left without a job when the grove she lived beside changed hands.",
+    temperament: "Watchful, loyal, and calmer than she first appears",
+    care: "A secure yard and a person who will give her a clear daily role",
+    story: [
+      "Gara lived at the edge of a citrus grove as a loosely kept farm dog. When the grove changed hands, the work and the people around her disappeared. She stayed near the fence line until someone asked the rescue to step in.",
+      "She is a dark brown girl with a white chest and a serious, thoughtful face. She will thrive with a person who can give her walks, a job to do, and a porch that is actually hers.",
+    ],
+    images: [
+      { src: "/images/dogs/gara.jpg", alt: "Gara, a dark brown rescue dog with a white chest" },
+    ],
+  },
+  {
+    slug: "lepi",
+    name: "Lepi",
+    status: "available",
+    sex: "Male",
+    age: "Adult",
+    summary:
+      "A smiling hound returned from a first home that could not give him enough outdoor time.",
+    temperament: "Upbeat, vocal in a hound way, and eager to please",
+    care: "Daily walks and a home that understands a beagle mix needs to move",
+    story: [
+      "Lepi’s first placement asked the rescue to take him back. The apartment was quiet and small, and a speckled hound who loves to walk and talk with his nose was not a match for that life.",
+      "He is a tri-color boy with a pink collar and a wide, open smile. His second home should want a walking companion and be ready for a hound’s voice, not a dog who can be left idle all day.",
+    ],
+    images: [
+      { src: "/images/dogs/lepi.webp", alt: "Lepi, a tri-color beagle mix wearing a pink collar" },
+    ],
+  },
+  {
+    slug: "tina",
+    name: "Tina",
+    status: "available",
+    sex: "Female",
+    age: "Young adult",
+    summary:
+      "A brindle girl with pale eyes who was left standing in a rest-area parking lot when a truck pulled away.",
+    temperament: "Expressive, curious, and quickly becoming a house dog",
+    care: "Indoor living and a family that enjoys a funny, wide-eyed companion",
+    story: [
+      "Tina was seen in the bed of a pickup at a highway rest area. When the truck pulled back onto the road, she was still standing on the pavement. A traveler stayed with her until the rescue could reach them.",
+      "She is a brindle girl with pale, startling eyes and a grin that fills a room. She has taken to couches, chew toys, and indoor life, and she is ready for a family that will keep her off the highway for good.",
+    ],
+    images: [
+      { src: "/images/dogs/tina.webp", alt: "Tina, a brindle rescue dog with pale eyes lying on a couch" },
+    ],
+  },
+  {
+    slug: "lena",
+    name: "Lena",
+    status: "available",
+    sex: "Female",
+    age: "Adult",
+    summary:
+      "A house-mannered companion whose person entered assisted living and could not take her along.",
+    temperament: "Settled, polite, and happiest on a soft blanket nearby",
+    care: "A quieter adult home that already understands indoor dog life",
+    story: [
+      "Lena lived as an older neighbor’s companion until that person moved into assisted living. Adult children could not take a dog, and a well-mannered girl who already knew furniture and quiet rooms needed a new place to land.",
+      "She is a small brown-and-white girl who settles on a blanket as if she has always belonged there. She is looking for a calmer home that wants a polite housemate more than a project.",
+    ],
+    images: [
+      { src: "/images/dogs/lena.webp", alt: "Lena, a small brown-and-white rescue dog resting on a red blanket" },
+    ],
+  },
+  {
+    slug: "dennis",
+    name: "Dennis",
+    status: "available",
+    sex: "Male",
+    age: "Adult",
+    summary:
+      "A compact golden boy left unpaid at a boarding kennel after a hunting-season reservation ran out.",
+    temperament: "Cheerful, people-focused, and eager to stay close",
+    care: "A family home and regular time outdoors without being treated as a working tool",
+    story: [
+      "Dennis was left at a boarding kennel after a hunting-season reservation ended and the bill stopped being paid. Staff would not keep him indefinitely, and a compact golden boy with a full-time smile needed a real home, not another reservation.",
+      "He is short-legged, sturdy, and openly fond of people. He will do well with a family that wants a friendly companion for walks and couch time, not a dog kept only for a season.",
+    ],
+    images: [
+      { src: "/images/dogs/dennis.jpg", alt: "Dennis, a compact golden rescue dog standing on pebbles" },
+    ],
+  },
+  {
+    slug: "buster",
+    name: "Buster",
+    status: "available",
+    sex: "Male",
+    age: "Young adult",
+    summary:
+      "A velcro black-and-white boy who waited at a warehouse gate every morning until a worker called for help.",
+    temperament: "Affectionate, loyal, and happiest leaning on his person",
+    care: "A home that can give him companionship through the day",
+    story: [
+      "Buster waited at a warehouse gate every morning for weeks. A dock worker started sharing breakfast with him, then realized the dog was not going home to anyone. That is when the rescue got the call.",
+      "He is a black boy with a white chest who leans into people as if he has been waiting to do that all along. He wants a home that can keep him close and will not make him wait at another gate.",
+    ],
+    images: [
+      { src: "/images/dogs/buster.jpg", alt: "Buster, a black rescue dog with a white chest leaning on a person" },
+    ],
+  },
+  {
+    slug: "melly",
+    name: "Melly",
+    status: "available",
+    sex: "Female",
+    age: "Senior",
+    summary:
+      "A soft-eyed senior left behind when her family relocated and a relative could not keep her.",
+    temperament: "Gentle, dignified, and quietly hopeful",
+    care: "A calmer home, a soft bed, and senior-aware veterinary follow-up",
+    story: [
+      "Melly’s family relocated and left her with a relative who could not keep a dog. She is a senior with a white muzzle and the kind of still, searching face that comes from losing every familiar room at once.",
+      "She does not need a busy young-dog life. She needs a quieter home, a predictable meal, and someone who understands that her best years can still be kind ones.",
+    ],
+    images: [
+      { src: "/images/dogs/melly.webp", alt: "Melly, a senior black rescue dog with a white muzzle" },
+    ],
+  },
+  {
+    slug: "beni",
+    name: "Beni",
+    status: "available",
+    sex: "Male",
+    age: "Adult",
+    summary:
+      "A polite hound who waited at the same street corner and offered a paw to anyone who stopped.",
+    temperament: "Mannerly, affectionate, and eager to greet his people",
+    care: "Leash walks in a neighborhood and a home that likes a hound at the door",
+    story: [
+      "A mail carrier noticed the same tan-and-white hound at the same corner for several routes. Beni would stand up, offer a paw, and wait as if he expected someone to claim him. After enough mornings, the carrier asked the rescue to pick him up.",
+      "He is a well-built boy who already knows how to ask for contact without crowding. He is ready for a neighborhood home that will put a collar on him for good and let him keep that polite greeting.",
+    ],
+    images: [
+      { src: "/images/dogs/beni.webp", alt: "Beni, a tan-and-white hound standing up to hold someone’s hands" },
+    ],
+  },
+  {
+    slug: "kira",
+    name: "Kira",
+    status: "available",
+    sex: "Female",
+    age: "Adult",
+    summary:
+      "A steady tan-and-white girl kept as an extra dog from a backyard litter and left when the rest were gone.",
+    temperament: "Focused, loyal, and calmer with a clear routine",
+    care: "A structured home, positive training, and time to become someone’s only dog",
+    story: [
+      "Kira came from a backyard litter kept as extra dogs. When the younger ones were gone, she was the adult left behind with no job and no person of her own.",
+      "She is a tan-and-white girl with a serious, honest face and a strong wish to stay close. She will do best in a home that can give her routine, training, and the feeling of being chosen rather than leftover.",
+    ],
+    images: [
+      { src: "/images/dogs/kira.webp", alt: "Kira, a tan-and-white rescue dog with a steady expression" },
+    ],
+  },
 ];
 
 export const featuredDogSlugs = ["frida", "lola", "darko"] as const;
-export const featuredStorySlugs = ["lola", "darko", "betty", "nina"] as const;
+export const featuredStorySlugs = ["lola", "darko", "betty", "nina", "flo", "tina", "melly"] as const;
+export const adoptionDogSlugs = [
+  "flo",
+  "poppy",
+  "lana",
+  "timo",
+  "zuja",
+  "gari",
+  "brko",
+  "mindy",
+  "gara",
+  "lepi",
+  "tina",
+  "lena",
+  "dennis",
+  "buster",
+  "melly",
+  "beni",
+  "kira",
+] as const;
 
 export function getDog(slug: string) {
   return dogs.find((dog) => dog.slug === slug);
@@ -432,6 +757,12 @@ export function featuredDogs() {
 
 export function featuredStories() {
   return featuredStorySlugs
+    .map((slug) => getDog(slug))
+    .filter((dog): dog is Dog => Boolean(dog));
+}
+
+export function adoptionDogs() {
+  return adoptionDogSlugs
     .map((slug) => getDog(slug))
     .filter((dog): dog is Dog => Boolean(dog));
 }

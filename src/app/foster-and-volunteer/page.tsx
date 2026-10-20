@@ -23,8 +23,8 @@ const opportunities = [
     body: "Hands-on help with feeding, cleaning, walks, and calm companionship keeps rescued dogs comfortable while they recover.",
   },
   {
-    title: "Events and community support",
-    body: "When public events are scheduled, volunteers can help people meet dogs, share information, and keep the day running smoothly.",
+    title: "Adoption days and community support",
+    body: "When people come to meet dogs, volunteers can help with greetings, information, and keeping the day running smoothly.",
   },
   {
     title: "Supplies and professional help",

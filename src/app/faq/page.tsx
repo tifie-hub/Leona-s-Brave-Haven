@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "How can I adopt a rescued dog in Florida?",
-    a: "Browse Meet the Dogs, then start an adoption inquiry or email the rescue. Placement depends on a good match for the dog and household.",
+    a: "Browse the Adoption page or Meet the Dogs, then start an adoption inquiry or email the rescue. Placement depends on a good match for the dog and household.",
   },
   {
     q: "Can I foster a rescue dog?",

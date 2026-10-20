@@ -36,7 +36,7 @@ export default function MeetTheDogsPage() {
             the next step.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Button href="/foster-and-volunteer#application">Start an adoption inquiry</Button>
+            <Button href="/adoption#inquiry">Start an adoption inquiry</Button>
             <Button href="/contact" variant="secondary">
               Contact the rescue
             </Button>
