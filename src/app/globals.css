@@ -83,6 +83,14 @@ h4,
   }
 }
 
+.whatsapp-float {
+  position: fixed !important;
+  left: 1rem !important;
+  right: auto !important;
+  bottom: 1.25rem !important;
+  z-index: 60;
+}
+
 .btn-glass {
   border: 1px solid rgba(255, 255, 255, 0.92);
   box-shadow: 0 8px 24px rgba(48, 48, 48, 0.08);
