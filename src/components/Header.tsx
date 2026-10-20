@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/Button";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { headerLinks, site } from "@/lib/site";
 
 function isActive(pathname: string | null, href: string) {
@@ -99,7 +98,6 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex flex-nowrap items-center gap-2">
-          <WhatsAppLink onClick={() => setOpen(false)} />
           <div className="hidden xl:block">
             <Button
               href={site.youtubeUrl}

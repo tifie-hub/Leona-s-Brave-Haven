@@ -4,30 +4,38 @@ import { site } from "@/lib/site";
 type WhatsAppLinkProps = {
   className?: string;
   size?: number;
+  floating?: boolean;
   onClick?: () => void;
 };
 
 export function WhatsAppLink({
   className = "",
-  size = 40,
+  size,
+  floating = false,
   onClick,
 }: WhatsAppLinkProps) {
+  const iconSize = size ?? (floating ? 64 : 40);
+
   return (
     <a
       href={site.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Message Leona’s Brave Haven on WhatsApp"
-      className={`inline-flex shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-charcoal ${className}`}
+      className={
+        floating
+          ? `fixed bottom-5 left-5 z-50 inline-flex rounded-full shadow-[0_10px_28px_rgba(48,48,48,0.28)] transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-charcoal sm:bottom-6 sm:left-6 ${className}`
+          : `inline-flex shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-charcoal ${className}`
+      }
       onClick={onClick}
     >
       <Image
         src="/brand/whatsapp.webp"
         alt=""
-        width={size}
-        height={size}
+        width={iconSize}
+        height={iconSize}
         className="block"
-        style={{ width: size, height: size }}
+        style={{ width: iconSize, height: iconSize }}
       />
     </a>
   );

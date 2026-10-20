@@ -7,6 +7,7 @@ import "@fontsource/montserrat/700.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SkipLink } from "@/components/SkipLink";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <WhatsAppLink floating />
       </body>
     </html>
   );

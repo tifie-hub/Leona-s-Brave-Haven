@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { mapsSearchUrl, navLinks, site } from "@/lib/site";
 
 const policyLinks = [
@@ -103,8 +102,15 @@ export function Footer() {
                 Open address in Google Maps
               </a>
             </p>
-            <p className="mt-4">
-              <WhatsAppLink />
+            <p className="mt-3">
+              <a
+                href={site.whatsappUrl}
+                className="underline underline-offset-4 hover:text-lime"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
             </p>
             <p className="mt-3">
               <a
