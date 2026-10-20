@@ -10,6 +10,7 @@ import {
   inputClass,
 } from "@/components/FormFields";
 import { Button } from "@/components/Button";
+import { site } from "@/lib/site";
 
 const initial: ActionResult | null = null;
 
@@ -108,7 +109,8 @@ export function ContactForm() {
       </Field>
 
       <p className="text-sm leading-6 text-muted">
-        We use this information only to respond to your inquiry. See the{" "}
+        This message is sent to {site.email}. We use this information only to
+        respond to your inquiry. See the{" "}
         <a className="underline underline-offset-4" href="/privacy">
           privacy notice
         </a>{" "}

@@ -62,9 +62,8 @@ export default function ContactPage() {
         <div className="rounded-xl border border-[#e6e2e6] bg-white p-6 shadow-[0_8px_24px_rgba(48,48,48,0.06)] sm:p-8">
           <h2 className="font-heading text-2xl font-bold">Send a message</h2>
           <p className="mt-3 text-sm leading-6 text-muted">
-            The form includes a hidden spam trap and server-side validation. If
-            email delivery is not configured yet, your message is still stored
-            and you should also write to {site.email} for urgent requests.
+            Messages from this form are sent to {site.email}. You can also
+            write that address directly.
           </p>
           <div className="mt-6">
             <ContactForm />

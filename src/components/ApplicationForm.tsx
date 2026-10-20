@@ -10,6 +10,7 @@ import {
   inputClass,
 } from "@/components/FormFields";
 import { Button } from "@/components/Button";
+import { site } from "@/lib/site";
 
 const initial: ActionResult | null = null;
 
@@ -159,8 +160,8 @@ export function ApplicationForm({
             required
           />
           <span>
-            I understand this information will be used only to review my inquiry
-            and follow up with me. I have read the{" "}
+            I understand this information will be sent to {site.email} to review
+            my inquiry and follow up with me. I have read the{" "}
             <a className="underline underline-offset-4" href="/privacy">
               privacy notice
             </a>

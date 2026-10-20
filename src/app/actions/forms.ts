@@ -1,5 +1,7 @@
 "use server";
 
+import { emailConfigured, sendFormEmail } from "@/lib/email";
+import { site } from "@/lib/site";
 import { storeSubmission } from "@/lib/submissions";
 import {
   isHoneypotFilled,
@@ -12,10 +14,6 @@ export type ActionResult = {
   message: string;
   errors?: Record<string, string>;
 };
-
-function emailConfigured() {
-  return Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_INBOX);
-}
 
 export async function submitContact(
   _prev: ActionResult | null,
@@ -39,11 +37,25 @@ export async function submitContact(
 
   await storeSubmission("contact", values);
 
-  if (!emailConfigured()) {
+  const email = await sendFormEmail({
+    subject: `Website contact: ${values.topic}`,
+    replyTo: values.email,
+    fields: {
+      Form: "Contact",
+      Name: values.name,
+      Email: values.email,
+      Phone: values.phone,
+      Topic: values.topic,
+      Message: values.message,
+    },
+  });
+
+  if (!email.sent) {
     return {
-      status: "success",
-      message:
-        "Your message was saved on this website. Email delivery is not configured yet, so please also write to leonabravehaven@gmail.com if your request is time-sensitive.",
+      status: emailConfigured() ? "error" : "success",
+      message: emailConfigured()
+        ? `Your message was saved, but email delivery failed. Please also write to ${site.email}.`
+        : `Your message was saved. Please also email ${site.email} if your request is time-sensitive.`,
     };
   }
 
@@ -75,11 +87,29 @@ export async function submitApplication(
 
   await storeSubmission("application", values);
 
-  if (!emailConfigured()) {
+  const email = await sendFormEmail({
+    subject: `Website application: ${values.interest}`,
+    replyTo: values.email,
+    fields: {
+      Form: "Foster and volunteer",
+      Interest: values.interest,
+      Name: values.name,
+      Email: values.email,
+      Phone: values.phone,
+      City: values.city,
+      Household: values.household,
+      Experience: values.experience,
+      "Dog reference": values.dogReference,
+      Message: values.message,
+    },
+  });
+
+  if (!email.sent) {
     return {
-      status: "success",
-      message:
-        "Your application was saved on this website. Email notification is not configured yet, so please also email leonabravehaven@gmail.com if you need a timely response.",
+      status: emailConfigured() ? "error" : "success",
+      message: emailConfigured()
+        ? `Your application was saved, but email delivery failed. Please also write to ${site.email}.`
+        : `Your application was saved. Please also email ${site.email} if you need a timely response.`,
     };
   }
 

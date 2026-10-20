@@ -2,7 +2,7 @@ export const site = {
   name: "Leona’s Brave Haven",
   founder: "Linda Jenkins",
   motto: "Saving lives. Giving hope. Changing Tomorrow.",
-  email: "leonabravehaven@gmail.com",
+  email: "info@leonasbravehaven.org",
   location: {
     street: "14500 Myakka Road",
     city: "Sarasota",

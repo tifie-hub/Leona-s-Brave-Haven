@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ApplicationForm } from "@/components/ApplicationForm";
 import { PageHero } from "@/components/PageHero";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Foster and Volunteer",
@@ -59,8 +60,9 @@ export default function FosterPage() {
               conversation so the rescue can follow up.
             </p>
             <p className="mt-4 leading-8 text-muted">
-              We will use your details only to review the inquiry and contact
-              you. Do not include sensitive medical or financial information.
+              Applications are sent to {site.email}. We will use your details
+              only to review the inquiry and contact you. Do not include
+              sensitive medical or financial information.
             </p>
           </div>
           <div className="rounded-xl border border-[#e6e2e6] bg-white p-6 sm:p-8">

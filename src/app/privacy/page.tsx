@@ -56,11 +56,10 @@ export default function PrivacyPage() {
             Storage and email
           </h2>
           <p className="mt-3">
-            Until a transactional email service is configured, submissions may
-            be stored as files on the website host so they are not lost. After
-            email is connected, copies may also be delivered to the rescue
-            inbox. Hosting, PayPal, and email providers will have access only
-            as needed to operate those services.
+            Form submissions are sent to {site.email}. Copies may also be stored
+            as files on the website host so they are not lost. Hosting, PayPal,
+            and email providers will have access only as needed to operate those
+            services.
           </p>
         </div>
         <div>
