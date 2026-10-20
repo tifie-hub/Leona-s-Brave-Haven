@@ -30,7 +30,6 @@ function createTransporter(port: number) {
     port,
     secure: port === 465,
     requireTLS: port === 587,
-    family: 4,
     auth: {
       user: env("SMTP_USER"),
       pass: env("SMTP_PASS"),
