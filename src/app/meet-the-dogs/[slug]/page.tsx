@@ -59,6 +59,11 @@ export default async function DogProfilePage({
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority
             />
+            {dog.status === "adopted" ? (
+              <span className="absolute left-3 top-3 rounded-full bg-orange px-3 py-1 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-[0_4px_12px_rgba(48,48,48,0.25)]">
+                Adopted
+              </span>
+            ) : null}
           </div>
           {dog.images.length > 1 ? (
             <div className="mt-3 grid grid-cols-2 gap-3">
@@ -78,7 +83,11 @@ export default async function DogProfilePage({
         </div>
 
         <div>
-          <p className="font-heading text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+          <p
+            className={`font-heading text-sm font-semibold uppercase tracking-[0.16em] ${
+              dog.status === "adopted" ? "text-orange" : "text-muted"
+            }`}
+          >
             {statusLabel(dog.status)}
           </p>
           <h1 className="mt-3 font-heading text-4xl font-bold">{dog.name}</h1>
@@ -105,12 +114,23 @@ export default async function DogProfilePage({
           </dl>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="/adoption#inquiry">
-              {dog.status === "reserved" ? `Ask about ${dog.name}` : `Start an inquiry for ${dog.name}`}
-            </Button>
-            <Button href="/meet-the-dogs" variant="secondary">
-              Back to Meet the Dogs
-            </Button>
+            {dog.status === "adopted" ? (
+              <>
+                <Button href="/meet-the-dogs">See dogs looking for a home</Button>
+                <Button href="/adoption" variant="secondary">
+                  Back to Adoption
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button href="/adoption#inquiry">
+                  {dog.status === "reserved" ? `Ask about ${dog.name}` : `Start an inquiry for ${dog.name}`}
+                </Button>
+                <Button href="/meet-the-dogs" variant="secondary">
+                  Back to Meet the Dogs
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>

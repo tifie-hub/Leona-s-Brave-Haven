@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "Meet the dogs",
-    body: "Read each dog’s story and look for a match with your household, energy, and daily routine. The dogs on this page are currently looking for adoptive homes.",
+    body: "Read each dog’s story and look for a match with your household, energy, and daily routine. Dogs still looking for a home are listed on Meet the Dogs.",
   },
   {
     title: "Start an inquiry",
@@ -39,7 +39,7 @@ export default function AdoptionPage() {
       <PageHero
         eyebrow="Find your dog"
         title="Adoption"
-        intro="These rescued dogs are looking for adoptive homes. Each story is their own. Browse the dogs, then start an inquiry so the rescue can help you take the next step."
+        intro="These dogs from our recent adoption list have found homes. Each one still has a story to tell, and other rescued dogs are waiting. Browse Meet the Dogs, then start an inquiry if you are ready to adopt."
       />
 
       <section className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
@@ -64,10 +64,10 @@ export default function AdoptionPage() {
 
       <section className="border-t border-[#e6e2e6] bg-[#f8fbfa]">
         <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl font-bold">Dogs looking for a home</h2>
+          <h2 className="font-heading text-3xl font-bold">Recently adopted</h2>
           <p className="mt-4 max-w-3xl leading-7 text-muted">
-            These dogs have recently joined the adoption list. For the full
-            roster, including dogs already in care, visit Meet the Dogs.
+            Every dog on this page has been adopted. For dogs still looking for
+            a home, visit Meet the Dogs.
           </p>
           <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {dogs.map((dog) => (

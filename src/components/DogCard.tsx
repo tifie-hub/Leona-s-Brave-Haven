@@ -19,9 +19,18 @@ export function DogCard({ dog }: DogCardProps) {
           className="object-cover"
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         />
+        {dog.status === "adopted" ? (
+          <span className="absolute left-3 top-3 rounded-full bg-orange px-3 py-1 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-[0_4px_12px_rgba(48,48,48,0.25)]">
+            Adopted
+          </span>
+        ) : null}
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-xs font-heading font-semibold uppercase tracking-[0.14em] text-muted">
+        <p
+          className={`text-xs font-heading font-semibold uppercase tracking-[0.14em] ${
+            dog.status === "adopted" ? "text-orange" : "text-muted"
+          }`}
+        >
           {statusLabel(dog.status)}
         </p>
         <h3 className="mt-2 font-heading text-xl font-bold text-charcoal">

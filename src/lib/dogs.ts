@@ -1,4 +1,4 @@
-export type DogStatus = "available" | "reserved";
+export type DogStatus = "available" | "reserved" | "adopted";
 
 export type DogPhoto = {
   src: string;
@@ -414,7 +414,7 @@ export const dogs: Dog[] = [
   {
     slug: "flo",
     name: "Flo",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Young adult",
     summary:
@@ -432,7 +432,7 @@ export const dogs: Dog[] = [
   {
     slug: "poppy",
     name: "Poppy",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Young adult",
     summary:
@@ -450,7 +450,7 @@ export const dogs: Dog[] = [
   {
     slug: "lana",
     name: "Lana",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Adult",
     summary:
@@ -468,7 +468,7 @@ export const dogs: Dog[] = [
   {
     slug: "timo",
     name: "Timo",
-    status: "available",
+    status: "adopted",
     sex: "Male",
     age: "Adult",
     summary:
@@ -486,7 +486,7 @@ export const dogs: Dog[] = [
   {
     slug: "zuja",
     name: "Zuja",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Young adult",
     summary:
@@ -504,7 +504,7 @@ export const dogs: Dog[] = [
   {
     slug: "gari",
     name: "Gari",
-    status: "available",
+    status: "adopted",
     sex: "Male",
     age: "Adult",
     summary:
@@ -522,7 +522,7 @@ export const dogs: Dog[] = [
   {
     slug: "brko",
     name: "Brko",
-    status: "available",
+    status: "adopted",
     sex: "Male",
     age: "Adult",
     summary:
@@ -540,7 +540,7 @@ export const dogs: Dog[] = [
   {
     slug: "mindy",
     name: "Mindy",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Adult",
     summary:
@@ -558,7 +558,7 @@ export const dogs: Dog[] = [
   {
     slug: "gara",
     name: "Gara",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Adult",
     summary:
@@ -576,7 +576,7 @@ export const dogs: Dog[] = [
   {
     slug: "lepi",
     name: "Lepi",
-    status: "available",
+    status: "adopted",
     sex: "Male",
     age: "Adult",
     summary:
@@ -594,7 +594,7 @@ export const dogs: Dog[] = [
   {
     slug: "tina",
     name: "Tina",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Young adult",
     summary:
@@ -612,7 +612,7 @@ export const dogs: Dog[] = [
   {
     slug: "lena",
     name: "Lena",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Adult",
     summary:
@@ -630,7 +630,7 @@ export const dogs: Dog[] = [
   {
     slug: "dennis",
     name: "Dennis",
-    status: "available",
+    status: "adopted",
     sex: "Male",
     age: "Adult",
     summary:
@@ -648,7 +648,7 @@ export const dogs: Dog[] = [
   {
     slug: "buster",
     name: "Buster",
-    status: "available",
+    status: "adopted",
     sex: "Male",
     age: "Young adult",
     summary:
@@ -666,7 +666,7 @@ export const dogs: Dog[] = [
   {
     slug: "melly",
     name: "Melly",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Senior",
     summary:
@@ -684,7 +684,7 @@ export const dogs: Dog[] = [
   {
     slug: "beni",
     name: "Beni",
-    status: "available",
+    status: "adopted",
     sex: "Male",
     age: "Adult",
     summary:
@@ -702,7 +702,7 @@ export const dogs: Dog[] = [
   {
     slug: "kira",
     name: "Kira",
-    status: "available",
+    status: "adopted",
     sex: "Female",
     age: "Adult",
     summary:
@@ -768,5 +768,7 @@ export function adoptionDogs() {
 }
 
 export function statusLabel(status: DogStatus) {
-  return status === "reserved" ? "Reserved" : "Looking for a home";
+  if (status === "adopted") return "Adopted";
+  if (status === "reserved") return "Reserved";
+  return "Looking for a home";
 }
