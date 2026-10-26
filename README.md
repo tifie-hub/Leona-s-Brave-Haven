@@ -33,7 +33,7 @@ Copy `.env.example` to `.env.local` and add credentials only when they are avail
 | `SMTP_PASS` | For live form email | Mailbox password for that address |
 | `CONTACT_INBOX` | No | Inbox that receives form emails. Defaults to `info@leonasbravehaven.org` |
 
-Forms send to **info@leonasbravehaven.org** through PrivateEmail SMTP. Add `SMTP_PASS` in `.env.local`. Without the password, forms still validate and save a JSON record in `data/submissions/`. Donations are completed on PayPal.
+Forms send to **info@leonasbravehaven.org** through PrivateEmail SMTP. Add `SMTP_PASS` in `.env.local`. Without the password, forms still validate and save a JSON record in `data/submissions/`. Donations are completed on GoFundMe.
 
 ## Deploy
 
@@ -46,7 +46,7 @@ The app is a standard Next.js project and can be deployed to Vercel or any Node 
 ## Production notes
 
 - Dog listings and rescue stories use organization-supplied photographs and edited stories.
-- Donations are processed through the organization’s PayPal donate button.
+- Donations are processed through the organization’s GoFundMe campaign.
 - The business email is info@leonasbravehaven.org. Form notifications send there through PrivateEmail SMTP.
 - Nonprofit or tax-deductible status is not claimed because it has not been verified.
 - A map embed is intentionally omitted until the address pin is confirmed.

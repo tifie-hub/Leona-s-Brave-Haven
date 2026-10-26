@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/donate",
-        destination: "https://www.paypal.com/donate/?hosted_button_id=WUJNEJFPJ3RCG",
-        permanent: true,
+        destination: "https://gofund.me/04b5d2fb0",
+        permanent: false,
       },
       {
         source: "/events",

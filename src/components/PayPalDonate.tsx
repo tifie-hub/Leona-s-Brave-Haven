@@ -10,7 +10,7 @@ type PayPalDonateProps = {
 };
 
 export function PayPalDonate({
-  label = "Donate with PayPal",
+  label = "Donate on GoFundMe",
   size = "md",
   variant = "primary",
   className,
@@ -26,22 +26,5 @@ export function PayPalDonate({
     >
       {label}
     </Button>
-  );
-}
-
-export function PayPalDonateForm({
-  label = "Donate with PayPal",
-  size = "lg",
-}: {
-  label?: string;
-  size?: "md" | "lg";
-}) {
-  return (
-    <form action="https://www.paypal.com/donate" method="post" target="_blank">
-      <input type="hidden" name="hosted_button_id" value={site.paypalHostedButtonId} />
-      <Button type="submit" size={size}>
-        {label}
-      </Button>
-    </form>
   );
 }

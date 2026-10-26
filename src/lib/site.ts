@@ -17,8 +17,7 @@ export const site = {
   description:
     "Leona’s Brave Haven rescues abandoned and injured dogs across Florida, providing urgent care, rehabilitation, and safe shelter. More than 300 dogs have been saved, and more lives still need help.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  paypalHostedButtonId: "WUJNEJFPJ3RCG",
-  donateUrl: "https://www.paypal.com/donate/?hosted_button_id=WUJNEJFPJ3RCG",
+  donateUrl: "https://gofund.me/04b5d2fb0",
   youtubeUrl: "https://www.youtube.com/@leonabravehaven",
   youtubeChannelId: "UCqegNAo2TN2N5S4sVq_ADWQ",
   youtubeLatestVideoId: "tBygQvb5Q7I",
