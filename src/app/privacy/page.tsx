@@ -37,7 +37,7 @@ export default function PrivacyPage() {
             Contact and application forms may collect your name, email address,
             phone number, city, household notes, and the message you choose to
             send. A hidden field is used only to discourage automated spam.
-            Donations are completed on GoFundMe, not on a form on this website.
+            Donations are completed on PayPal, not on a form on this website.
           </p>
         </div>
         <div>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
           <p className="mt-3">
             Submitted information is used to respond to inquiries and review
             foster, volunteer, or adoption interest. It is not sold. Card
-            numbers should never be entered on these forms. GoFundMe handles
+            numbers should never be entered on these forms. PayPal handles
             donation payments on its own site.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
           </h2>
           <p className="mt-3">
             Form submissions are sent to {site.email}. Copies may also be stored
-            as files on the website host so they are not lost. Hosting, GoFundMe,
+            as files on the website host so they are not lost. Hosting, PayPal,
             and email providers will have access only as needed to operate those
             services.
           </p>

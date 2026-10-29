@@ -10,7 +10,7 @@ type PayPalDonateProps = {
 };
 
 export function PayPalDonate({
-  label = "Donate on GoFundMe",
+  label = "Donate with PayPal",
   size = "md",
   variant = "primary",
   className,
