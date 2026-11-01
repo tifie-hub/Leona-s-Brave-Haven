@@ -7,11 +7,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/donate",
-        destination: "https://www.paypal.com/donate/?hosted_button_id=WUJNEJFPJ3RCG",
-        permanent: false,
-      },
-      {
         source: "/events",
         destination: "/adoption",
         permanent: true,

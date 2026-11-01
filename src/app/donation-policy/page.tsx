@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Donation Policy",
   description:
-    "How donations to Leona’s Brave Haven are handled through PayPal, and what this website does not claim.",
+    "How donations to Leona’s Brave Haven are handled through PayPal or HopeFund, and what this website does not claim.",
 };
 
 export default function DonationPolicyPage() {
@@ -15,7 +15,7 @@ export default function DonationPolicyPage() {
       <PageHero
         eyebrow="Policies"
         title="Donation policy"
-        intro="Gifts to Leona’s Brave Haven are processed securely through PayPal."
+        intro="Gifts to Leona’s Brave Haven are completed on PayPal or HopeFund."
       />
       <section className="mx-auto w-full max-w-3xl space-y-8 px-4 py-14 leading-8 text-muted sm:px-6">
         <div>
@@ -33,12 +33,12 @@ export default function DonationPolicyPage() {
             Payment processing
           </h2>
           <p className="mt-3">
-            Online gifts are completed on PayPal. This website does not collect
-            card numbers or PayPal passwords. You can give with a PayPal account
-            or a card through PayPal’s checkout.
+            Online gifts are completed on PayPal or HopeFund. This website does
+            not collect card numbers or processor passwords. Choose a checkout
+            option on the Donate page.
           </p>
           <div className="mt-5">
-            <PayPalDonate label="Donate with PayPal" />
+            <PayPalDonate label="Choose how to donate" />
           </div>
         </div>
         <div>
@@ -47,8 +47,8 @@ export default function DonationPolicyPage() {
           </h2>
           <p className="mt-3">
             This website does not claim that the organization is a registered
-            nonprofit or that gifts are tax-deductible. PayPal may send its own
-            payment confirmation. Ask the rescue directly if you need a receipt
+            nonprofit or that gifts are tax-deductible. PayPal or HopeFund may
+            send their own payment confirmation. Ask the rescue directly if you need a receipt
             or written confirmation of status.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function DonationPolicyPage() {
             Refunds
           </h2>
           <p className="mt-3">
-            Refund requests follow PayPal’s process and any written policy
+            Refund requests follow the process of the checkout you used and any written policy
             supplied by the organization. Email{" "}
             <a className="underline underline-offset-4" href={`mailto:${site.email}`}>
               {site.email}

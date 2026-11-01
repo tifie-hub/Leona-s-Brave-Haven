@@ -210,10 +210,10 @@ export default function HomePage() {
           ))}
         </div>
         <div className="mt-10 rounded-xl bg-white p-8 text-center shadow-[0_8px_24px_rgba(48,48,48,0.06)]">
-          <h3 className="font-heading text-2xl font-bold">Donate with PayPal</h3>
+          <h3 className="font-heading text-2xl font-bold">Choose how to donate</h3>
           <p className="mx-auto mt-3 max-w-xl leading-7 text-muted">
-            Gifts go through PayPal’s secure checkout. You can donate with a
-            PayPal account or a card.
+            Gifts are completed on PayPal or HopeFund. This website does not
+            collect card numbers.
           </p>
           <div className="mt-6 flex justify-center">
             <PayPalDonate label="Donate to Save a Dog" size="lg" />
