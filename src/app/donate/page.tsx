@@ -59,9 +59,6 @@ export default function DonatePage() {
           <h2 className="text-center font-heading text-3xl font-bold tracking-tight text-white">
             Choose how to donate
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg leading-8 text-white/85">
-            Both options leave this website and open the processor’s checkout.
-          </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {options.map((option) => (
               <article
